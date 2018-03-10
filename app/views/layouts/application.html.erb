@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>檢覽-KENLAN-</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<header>
+	<div class="container">
+		<% if user_signed_in? %>
+        <!--ログイン中-->
+        <nav class="nav navbar-nav navbar-left">
+          <ul class="nav navbar-nav navbar-left">
+  			<li class="">
+               <span class="font"><%= link_to "檢覽-KENLAN", root_path, style: "color:white;" %></span>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
+            <li class=""><span class="font_text"><%= link_to "ユーザページへ", users_path, style: "color:white;" %>&emsp;</span>
+            </li>
+            <li class="">
+            <span class="font_text"><%= link_to "ログアウト", destroy_user_session_path, method: :delete , style: "color:white;" %>&emsp;</span>
+            </li>
+          </ul>
+        </nav>
+
+        <% else %>
+        <!-- ログアウト中 -->
+        <nav class="nav navbar-nav navbar-left">
+          <ul class="nav navbar-nav navbar-left">
+  			<li class="">
+               <span class="font"><%= link_to "檢覽-KENLAN", root_path, style: "color:white;" %></span>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="">
+              <span class="font_text"><%= link_to "本サイト概要", new_product_path, style: "color:white; margin:0px;" %>&emsp;</span>
+            </li>
+          </ul>
+        </nav>
+
+        <% end %>
+	</div>
+</header>
+
+
+    <%= yield %>
+
+  <footer>
+    <div class="sticky_f">
+    <% if user_signed_in? %>
+      <!--ログイン中-->
+      <nav class="nav navbar-nav navbar-left">
+        <div class=""> <%= link_to "運営への質問／問い合わせはこちら", new_product_path, style:"color: white;" %></div>
+      </nav>
+<br/>
+    <% else %>
+      <!-- ログアウト中 -->
+
+	    <nav class="nav navbar-nav navbar-left">
+        <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", new_product_path, style:"color: white;" %></div>
+      </nav>
+	    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+        <div class=""> <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;" %> </div>
+       </nav>
+<hr>
+    <% end %>
+
+	  	<p>
+	        <a style="color: white;">利用規約　|</a>
+	        <a style="color: white;">プライバシーポリシー　|</a>
+	        <a style="color: white;">サイトマップ</a>
+	    </p>
+	    <p style="color: white;"><small>Copyrighht © 2017 ABCD Co.,Ltd. All Rights Reserved.</small></p>
+    </div>
+  </footer>
+
+
+</html>

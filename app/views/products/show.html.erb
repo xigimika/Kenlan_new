@@ -1,0 +1,31 @@
+<h1>投稿した各ADの詳細画面</h1>
+
+<body>
+	<div class="">
+		<div class="image_ad">
+			<%= attachment_image_tag @user, :ad_image, :fill, 300, 300 %>
+		</div>
+		<div>
+			<h4>カテゴリー</h4>
+			<%= @user.category %><%= @user.category_ent %>
+		</div>
+		<div>
+			<!-- 広告タイトル -->
+			<h3><%= @user.ad_name %></h3>
+		</div>
+		<div>
+			<!-- 企業名 -->
+			<h4><%= @user.company_name %></h4>
+		</div>
+		<div>
+			<!-- 詳細 -->
+			<h4>詳細：<%= @user.ad_show_text %></h4>
+		</div>
+		<div>
+			<h4>URL：</h4>
+			<%= @user.url %>
+		</div>
+	</div>
+</body>
+
+
