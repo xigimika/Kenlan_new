@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310194211) do
+ActiveRecord::Schema.define(version: 20180311111841) do
 
   create_table "products", force: :cascade do |t|
-    t.integer "company_id"
     t.string "category"
     t.string "company_name"
     t.string "company_name_kana"
@@ -23,6 +22,10 @@ ActiveRecord::Schema.define(version: 20180310194211) do
     t.string "ad_show"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "category_ent"
+    t.string "ad_name"
+    t.text "ad_show_text"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,13 +52,6 @@ ActiveRecord::Schema.define(version: 20180310194211) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
-    t.string "ad_name"
-    t.string "ad_show"
-    t.string "url"
-    t.string "key_word"
-    t.string "category_ent"
-    t.text "ad_show_text"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
