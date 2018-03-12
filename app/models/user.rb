@@ -4,19 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	# validates :zip, numericality: { only_integer: true }
-	# validates :tell, numericality: { only_integer: true }
-
- attachment :ad_image
+	validates :zip, numericality: { only_integer: true }
+	validates :tell, numericality: { only_integer: true }
 
  has_many :products
 
 
-CATEGORY_LIST = {
-    "塾／学校" => "塾／学校", "ファッション" => "ファッション", "美容" => "美容", "マッサージ" => "マッサージ", "仕事探し" => "仕事探し",
-    "健康" => "健康", "医療" => "医療", "ゲーム／アニメ" => "ゲーム／アニメ", "トラベル" => "トラベル", "株／為替／金融" => "株／為替／金融",
-    "レストラン／カフェ" => "レストラン／カフェ", "食品" => "食品", "お部屋探し" => "お部屋探し", "ショッピングサイト" => "ショッピングサイト", "ウェディング" => "ウェディング",
-    "その他" => "その他"
-  }
+
+	def favorited_by?(user)
+		favorites.where(user_id: user.id).exists?
+	end
+
 
 end

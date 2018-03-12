@@ -1,2 +1,77 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<h1>新規投稿</h1>
+
+
+<%= form_for @product, url: products_path do |t| %>
+
+	<% if @product.errors.any? %>
+		<div id="error_explanation">
+	        <h3><%= @product.errors.count %>件のエラーが発生しました。</h3>
+	        <ul>
+		        <% @product.errors.full_messages.each do |message| %>
+		            <li><%= message %></li>
+		        <% end %>
+		    </ul>
+		</div>
+    <% end %>
+
+	  <h3>画像投稿</h3>
+	  	<%= t.attachment_field :ad_image %>
+
+	  <h3>カテゴリー</h3>
+	  <div class="category-control"><%= t.select :category, Product::CATEGORY_LIST.to_a, {}, {class:"form-control"} %>
+	  </div><br>
+	  	<p class="p_text"><b>選択肢に記述のないカテゴリーがございましたら、下記にご記載ください。</b></p>
+	  <div class="form-group">
+	  	<%= t.text_field :category_ent,:placeholder => "カテゴリー", class: "new_field" %></div>
+	<hr>
+
+	  <h3>企業名</h3>
+	  <div class="form-group">
+	  	<%= t.text_field :company_name,:placeholder => "企業名", class: "new_field" %>
+	  </div>
+	  	<p class="p_text">TOPページと詳細ページで表示されるサイトの企業名になります。</p>
+	<hr>
+
+	  <h3>タイトル</h3>
+	  <div class="form-group">
+	  	<%= t.text_field :ad_name,:placeholder => "タイトル", class: "new_field" %>
+	  </div>
+	  	<p class="p_text">一覧ページ、または詳細ページで表示される広告タイトル</p>
+	<hr>
+
+	  <h3>詳細⑴‹TOPページで表示される短文を記入›</h3>
+	  <div class="form-group">
+	  	<%= t.text_area :ad_show,:placeholder => "詳細", class: "new_field_text" %>
+	  </div>
+	  	<p class="p_text">TOPページで表示されるこの広告の説明を<b>250文字以内</b>で記入してください</p>
+	<hr>
+
+	<h3>詳細⑵‹詳細ページで表示される文章を記入›</h3>
+	  <div class="form-group">
+	  	<%= t.text_area :ad_show_text,:placeholder => "詳細",class: "new_field_text" %>
+	  </div>
+	 	<p class="p_text">詳細ページで表示されるこの広告の説明を<b>500文字前後</b>で記入してください</p>
+	<hr>
+
+	  <h3>URL</h3>
+	  <div class="form-group">
+	  	<%= t.text_field :url,:placeholder => "URL", class: "new_field" %>
+	  </div>
+	  	<p class="p_text">リンクを飛ばすためのURLを記入してください</p>
+	<hr>
+
+	  <h3>検索キーワード</h3>
+	  <div class="form-group">
+	  	<%= t.text_field :key_word,:placeholder => "キーワード", class: "new_field" %>
+	  </div>
+	  	<p class="p_text">閲覧者が検索をかける際、ヒットするキーワードを記入ください</p>
+
+	<br>
+	<%= t.submit '追加', data: {confirm: "追加しますか？"},class: "btn btn-primary" %>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
+

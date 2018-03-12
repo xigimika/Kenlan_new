@@ -1,31 +1,36 @@
 <h1>投稿した各ADの詳細画面</h1>
 
 <body>
+	<table>
+		<tr>
+			<th><h4>カテゴリー</h4></th>
+			<td><%= @product.category %><%= @product.category_ent %></td>
+		</tr>
+	</table>
+
 	<div class="">
-		<div class="image_ad">
-			<%= attachment_image_tag @user, :ad_image, :fill, 300, 300 %>
-		</div>
-		<div>
-			<h4>カテゴリー</h4>
-			<%= @user.category %><%= @user.category_ent %>
-		</div>
-		<div>
-			<!-- 広告タイトル -->
-			<h3><%= @user.ad_name %></h3>
-		</div>
-		<div>
-			<!-- 企業名 -->
-			<h4><%= @user.company_name %></h4>
-		</div>
-		<div>
-			<!-- 詳細 -->
-			<h4>詳細：<%= @user.ad_show_text %></h4>
-		</div>
-		<div>
-			<h4>URL：</h4>
-			<%= @user.url %>
+		<h3><%= @product.ad_name %></h3>
+			<div class="image_ad">
+				<%= attachment_image_tag @product, :ad_image, :fill, 600, 450, fallback: "no-image.jpg" %>
+			</div>
+
+		<div class="">
+			<table>
+				<tr>
+					<th><h4>詳細：</h4></th>
+					<td><h4><%= @product.ad_show_text %></h4></td>
+				</tr>
+				<tr>
+					<th><h4>URL：</h4></th>
+					<td><h4><%= @product.url %></h4></td>
+				</tr>
+				<tr><!-- 企業名 -->
+					<th><h4><%= @product.company_name %></h4></th>
+				</tr>
+			</table>
 		</div>
 	</div>
+
 </body>
 
 

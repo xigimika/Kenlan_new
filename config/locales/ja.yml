@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      product: 投稿
+    attributes:
+      product:
+        ad_image: 画像
+        category: カテゴリー
+        company_name: 企業名
+        ad_name: タイトル
+        ad_show: 詳細⑴
+        ad_show_text: 詳細⑵
+        url: URL
+        key_word: キーワード

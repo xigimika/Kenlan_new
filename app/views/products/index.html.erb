@@ -1,2 +1,27 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>投稿一覧</h1>
+
+<div></div>
+
+
+<div>
+	<% @products.each do |t| %>
+
+		<!-- カテゴリー -->
+		<span><%= t.category %></span>
+
+		<h3>会社名:</h3>
+		<span><%= t.company_name %></span>
+
+		<h3>タイトル:</h3>
+		<span><%= t.ad_name %></span>
+
+		<h3>説明:</h3>
+		<span><%= t.ad_show %></span>
+
+		<h3>URL:</h3>
+		<span><%= t.url %></span><br/>
+
+		<%= link_to "詳細", product_path(t.id) %><br/>
+	<% end %>
+</div>
+
