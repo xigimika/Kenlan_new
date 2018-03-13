@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+『　view - devise - registrations - edit.html.erb 』
 
-Things you may want to cover:
+«一番上に記入してあったコマンド。rails s して確認すると”user”と表示される。必要か不明なためここに保管しておく»
+	<%= resource_name.to_s.humanize %>
 
-* Ruby version
+«最下部のアカウント削除コマンド»
+<div class="edit_bottom">
+  <h3>アカウントを削除</h3>
 
-* System dependencies
+<p> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

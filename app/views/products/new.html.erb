@@ -1,10 +1,10 @@
-<h1>新規投稿</h1>
+<h1 style="text-align: center;">新規投稿</h1>
 
 
 <%= form_for @product, url: products_path do |t| %>
 
 	<% if @product.errors.any? %>
-		<div id="error_explanation">
+		<div id="error_explanation" >
 	        <h3><%= @product.errors.count %>件のエラーが発生しました。</h3>
 	        <ul>
 		        <% @product.errors.full_messages.each do |message| %>
@@ -13,9 +13,9 @@
 		    </ul>
 		</div>
     <% end %>
-
+  <div style="text-align: center;">
 	  <h3>画像投稿</h3>
-	  	<%= t.attachment_field :ad_image %>
+	  	<%= t.attachment_field :ad_image, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
 
 	  <h3>カテゴリー</h3>
 	  <div class="category-control"><%= t.select :category, Product::CATEGORY_LIST.to_a, {}, {class:"form-control"} %>
@@ -68,6 +68,7 @@
 
 	<br>
 	<%= t.submit '追加', data: {confirm: "追加しますか？"},class: "btn btn-primary" %>
+  </div>
 <% end %>
 <br>
 <br>

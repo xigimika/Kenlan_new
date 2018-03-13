@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 .main-visual{
 	background-image: url(http://www.anywalls.com/pic/201212/1920x1200/anywalls.com-56006.jpg);
 	width: 100%;
@@ -32,4 +33,55 @@
 .main_text{
 	color:white;
 	line-height: 30px;
+}
+
+.image_size_index{
+	max-width: 200px;
+	max-height: 150px;
+	background-size: cover;
+}
+
+
+.image_gazou{
+	max-width: 550px;
+	max-height: 450px;
+	background-size: cover;
+}
+
+.in_td{
+	/*width: 50%;*/
+	/*overflow-y: scroll;*/
+	/*white-space: normal;*/
+	word-break:break-all;
+	width: 680px;
+}
+
+.clearfix::after{
+	content:"";
+	display:block;
+	clear: both;
+}
+
+.center-block{
+	padding-bottom: 80px;
+}
+
+.in_show{
+	word-break:break-all;
+	width: 700px;
+}
+
+.category-control{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.image_gazou_edit{
+	max-width: 300px;
+	max-height: 250px;
+	background-size: cover;
+}
+
+.post-box{
+	/*height: 200px;*/
 }

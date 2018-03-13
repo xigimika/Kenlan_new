@@ -1,27 +1,39 @@
-<h1>投稿一覧</h1>
+<body>
+	<h1>投稿一覧</h1>
 
-<div></div>
 
 
-<div>
-	<% @products.each do |t| %>
 
-		<!-- カテゴリー -->
-		<span><%= t.category %></span>
+	<!-- <div class="row_body"> -->
+	<div class="center-block clearfix">
+	  	<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-9">
+			<% @products.each do |t| %>
+			<div class="col-xs-12 post-box">
 
-		<h3>会社名:</h3>
-		<span><%= t.company_name %></span>
+		  		<div class="col-xs-4">
+					<!-- カテゴリー -->
+					<p><%= t.category %></p>
 
-		<h3>タイトル:</h3>
-		<span><%= t.ad_name %></span>
-
-		<h3>説明:</h3>
-		<span><%= t.ad_show %></span>
-
-		<h3>URL:</h3>
-		<span><%= t.url %></span><br/>
-
-		<%= link_to "詳細", product_path(t.id) %><br/>
-	<% end %>
-</div>
-
+					<%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size_index" %>
+		  		</div>
+			  	<div class="col-xs-8">
+					<!-- <p>タイトル:</p> -->
+					<p><%= t.ad_name %></p>
+					<!-- <p>説明:</p> -->
+					<p class="in_td"><%= t.ad_show %></p>
+					<p>会社名:<%= t.company_name %></p>
+					<!-- <p>URL:</p>
+					<p><%= t.url %></p> -->
+					<span><%= link_to "詳細", product_path(t.id), class: "btn btn-success" %></span>
+					<br/>
+			  	</div>
+			  </div>
+			<% end %>
+			</div>
+		</div>
+	</div>
+	<!-- </div> -->
+<%= paginate @products, class: "pagenate" %>
+</body>
