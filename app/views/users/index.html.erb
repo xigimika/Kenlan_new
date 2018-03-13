@@ -1,34 +1,39 @@
-<h1>各ユーザのtopページ</h1>
-<h2>⑴ 登録した時のユーザ情報:編集ボタン（edit_path）<br>
-⑵ 投稿したADへ飛ぶためのボタン（show_edit_path）</h2>
+<h1 style="text-align: center;">TOP</h1>
+<hr>
+
+<%= link_to "ユーザー情報の確認・編集はこちら", edit_user_registration_path, class: "btn btn-warning", style: "color:black;font-size: 20px; margin-left: 38%; padding: 23px 8px;" %>
 
 
-<%= link_to "新規登録", new_product_path, class: "btn btn-large btn-primary" %><hr>
 
-<div class="col-xs-12">
-		<h2 class="my-4">商品情報</h2>
-		<div class="row">
-			<table class="table table-hover">
-				<tr>
-					<td><h4>タイトル</h4></td>
-					<td></td>
-					<td><h4>URL</h4></td>
-					<td><h4>企業名</h4></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<% @products.each do |t| %>
+<div class="center-block clearfix">
+	<div class="row">
+		<div class="col-xs-12">
+			<h2 class="ichiran">商品情報
+			<%= link_to "新規登録", new_product_path, class: "btn btn-large btn-info", style: "color:maroon; padding: 8px 23px; font-size: 17px; margin-left: 67%;" %></h2>
+				<table class="table table-hover">
 					<tr>
-						<th><h4><%= t.ad_name %></h4></td>
-						<td><%= attachment_image_tag t, :ad_image, :fill, 150, 50, fallback: "no-image_2 copy.jpg" %></td>
-						<td><h4><%= t.url %></h4></td>
-						<td><h4><%= t.company_name %></h4></td>
-						<td>
-							<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success" %>
-						</td>
-						<td><%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
+						<td><h4>タイトル</h4></td>
+						<td></td>
+						<td><h4>URL</h4></td>
+						<td><h4>企業名</h4></td>
+						<td></td>
+						<td></td>
 					</tr>
-				<% end %>
-			</table>
-</th>
+					<% @products.each do |t| %>
+						<tr>
+							<td><h4><%= t.ad_name %></h4></td>
+							<td><%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size" %></td>
+							<td><h4><%= t.url %></h4></td>
+							<td><h4><%= t.company_name %></h4></td>
+							<td>
+								<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success", style: "color:black;" %>
+							</td>
+							<td><%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
+						</tr>
+					<% end %>
+				</table>
+		</div>
+	</div>
+</div>
+
 <hr>
