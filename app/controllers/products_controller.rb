@@ -5,8 +5,15 @@ class ProductsController < ApplicationController
   end
 
   def index
-  	@products = Product.all
-    @products = Product.page(params[:page]).reverse_order
+  	# @products = Product.all.order("created_at DESC")
+    @products = Product.page(params[:page]).per(10).order("created_at DESC")
+    @u = Product.search
+  end
+
+  def search
+    @u = Product.search(params[:q])
+    @results = @u.result(distinct: true).page(params[:page]).per(10).order("created_at DESC")
+    render :index
   end
 
   def show

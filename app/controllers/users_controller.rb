@@ -3,8 +3,18 @@ class UsersController < ApplicationController
 before_action :authenticate_user!
 
   def index
-    @products = Product.where(user_id: current_user.id)
-    # @user = User.page(params[:page]).reverse_order
+    # @products = Product.where(user_id: current_user.id)
+    @products = Product.page(params[:page]).per(5).where(user_id: current_user.id).order("created_at DESC")
+    @u = Product.search
+  end
+
+  def search
+    @u = Product.search(params[:q])
+    @results = @u.result(distinct: true).page(params[:page]).per(5).where(user_id: current_user.id).order("created_at DESC")
+    # if @results == nil
+    #       @products = Product.page(params[:page]).per(2).where(user_id: current_user.id).order("created_at DESC")
+    # end
+    render :index
   end
 
   def show
@@ -17,6 +27,8 @@ before_action :authenticate_user!
 
   def new
   end
+
+
 
 
   def edit

@@ -5,32 +5,66 @@
 
 
 
-<div class="center-block clearfix">
+<div class="center-block clearfix" style="padding: 15px;">
 	<div class="row">
 		<div class="col-xs-12">
 			<h2 class="ichiran">商品情報
 			<%= link_to "新規登録", new_product_path, class: "btn btn-large btn-info", style: "color:maroon; padding: 8px 23px; font-size: 17px; margin-left: 67%;" %></h2>
 				<table class="table table-hover">
+
+
+				<%= search_form_for @u, url: user_search_path do |f| %>
+				<p>
+		          <label style="margin-bottom: 0px; padding-top: 0px;margin-left: 10px;"><%= f.search_field :ad_name_or_company_name_cont,size:45 ,style:"width: 78%; height:32px;" %>
+		          <!-- <input id="submit_button" type="submit" class="" name="submit" value="検　索" style="margin-bottom: 4px;"> -->
+		          <%= submit_tag '検索', class: 'btn btn-primary' %>
+
+		      </label>
+		        </p>
+    			<% end %>
+
 					<tr>
 						<td><h4>タイトル</h4></td>
 						<td></td>
 						<td><h4>URL</h4></td>
-						<td><h4>企業名</h4></td>
 						<td></td>
 						<td></td>
 					</tr>
-					<% @products.each do |t| %>
+
+					<% if @results.presence %>
+						<% @results.each do |t| %>
 						<tr>
 							<td><h4><%= t.ad_name %></h4></td>
 							<td><%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size" %></td>
-							<td><h4><%= t.url %></h4></td>
-							<td><h4><%= t.company_name %></h4></td>
+							<td><h4 class="url_long"><%= t.url %></h4></td>
 							<td>
 								<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success", style: "color:black;" %>
 							</td>
 							<td><%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
 						</tr>
 					<% end %>
+					<tr><td><%= paginate @results, class: "pagenate" %></td></tr>
+
+					<% elsif @products.blank? %>
+					<h2>&emsp;&emsp;＊検索結果はありません</h2>
+
+					<% else %>
+
+					<% @products.each do |t| %>
+						<tr>
+							<td><h4><%= t.ad_name %></h4></td>
+							<td><%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size" %></td>
+							<td><h4 class="url_long"><%= t.url %></h4></td>
+							<td>
+								<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success", style: "color:black;" %>
+							</td>
+							<td><%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
+						</tr>
+					<% end %>
+					<tr><td><%= paginate @products, class: "pagenate" %></td></tr>
+					<% end %>
+
+
 				</table>
 		</div>
 	</div>

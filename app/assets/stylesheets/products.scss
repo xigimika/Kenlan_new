@@ -82,6 +82,48 @@
 	background-size: cover;
 }
 
-.post-box{
-	/*height: 200px;*/
+
+.index_title{
+	text-align: center;
+	text-decoration: underline;
+    text-shadow: 16px -4px 6px;
+    font-family: cursive;
+    word-spacing: 8px;
+    font-weight: bolder;
+    font-style: italic;
+    height: 44px;
+    margin: 0px;
+    padding-top: 4px;
+    background-color: black;
+    font-size: 31px;
+    letter-spacing: 1mm;
 }
+
+.p_danraku{
+	margin-bottom: 0px;
+	padding-top: 16px;
+	margin: 0px;
+	border-bottom: 3px solid #eeeeee;
+	background-color: black;
+}
+
+.post-box{
+	border-bottom: 3px ridge #95937B;
+    border-left: 2px groove ghostwhite;
+    border-right: 3px ridge #95937B;
+    border-top: 2px inset ghostwhite;
+    box-shadow: 6px 6px 14px;
+    margin-bottom: 4%;
+    height: 200px;
+}
+
+.show_box{
+	border-bottom: 2px groove #95937B;
+    border-left: 2px groove #95937B;
+    border-right: 2px groove #95937B;
+    border-top: 2px groove #95937B;
+    box-shadow: -3px 2px 15px;
+}
+
+
+

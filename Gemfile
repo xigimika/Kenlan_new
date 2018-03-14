@@ -38,7 +38,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+
   gem 'selenium-webdriver'
+
+  # コントローラに"pry-◯◯"を入力することでMVCが上手く連動しているかを確認することができる。
+  # 確認が終わったらコントローラのアクションから"pry-◯◯"を外す。
+  # 詳しくは「Rails で Pry を使う」と検索するとヒットする。
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
@@ -67,3 +72,11 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'kaminari'
+
+gem 'ransack'
+
+
+
+
+
+
