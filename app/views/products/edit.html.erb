@@ -1,6 +1,4 @@
 <h1>編集</h1>
-<p>更新ボタンを追加　=> 確認画面有り</p>
-<p>TOPへ戻るボタンを追加　=> 確認画面有り</p>
 
 <%= form_for @product do |t| %>
 
@@ -22,6 +20,12 @@
 		<h3>カテゴリー</h3>
 		  <div class="category-control"><%= t.select :category, Product::CATEGORY_LIST.to_a, {}, {class:"form-control"} %>
 		  </div><br>
+
+	  <div class="category-control">
+      	<%= t.select :category_2, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+      </div>
+
+
 		  	<p class="p_text"><b>選択肢にないカテゴリーが必要になりましたら、下記に語彙記入ください。</b></p>
 		　<div class="form-group">
 		  	<%= t.text_field :category_ent,:placeholder => "カテゴリー", class: "new_field" %>

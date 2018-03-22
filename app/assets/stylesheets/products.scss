@@ -50,10 +50,10 @@
 
 .in_td{
 	/*width: 50%;*/
-	/*overflow-y: scroll;*/
+	overflow-y: scroll;
 	/*white-space: normal;*/
 	word-break:break-all;
-	width: 680px;
+	width: 660px;
 }
 
 .clearfix::after{
@@ -124,6 +124,19 @@
     border-top: 2px groove #95937B;
     box-shadow: -3px 2px 15px;
 }
+
+.select_tit{
+	background:#fdfbe7;
+}
+
+.se{
+	background:#eee;
+}
+
+.optgroup {
+     font-style:normal;
+     }
+
 
 
 

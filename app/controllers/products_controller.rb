@@ -57,6 +57,7 @@ class ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(
             :category,
+            :category_2,
             :category_ent,
             :company_name,
             :company_name_kana,

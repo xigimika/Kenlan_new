@@ -1,0 +1,2 @@
+class ProtCate < ApplicationRecord
+end

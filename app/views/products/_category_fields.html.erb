@@ -1,0 +1,8 @@
+
+<div class="category-control">
+
+ <%= t.select :category, Category::CATEGORY_LIST.to_a, { prompt: '選択してください' }, { class: 'form-control' } %>
+
+  <%= link_to_remove_association '削除', t , class: 'btn btn-default'%>
+
+</div>

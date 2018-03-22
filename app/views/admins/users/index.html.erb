@@ -1,0 +1,27 @@
+<h1>登録者情報一覧</h1>
+
+<%= link_to "AD情報一覧へ", admins_products_path %>
+
+<table class="ad_us_tab">
+	<tr class="ad_us_tr">
+		<td class="ad_us_td"><h4>会社名</h4></td>
+		<td class="ad_us_td"><h4>担当者</h4></td>
+		<td class="ad_us_td"><h4>メールアドレス</h4></td>
+		<td class="ad_us_td"><h4>電話番号</h4></td>
+		<td><h4></h4></td>
+	</tr>
+
+	<% @users.each do |t| %>
+
+	<tr class="ad_us_tr">
+		<td class="ad_us_td"><%= t.company_name %></td>
+		<td class="ad_us_td"><%= t.pic_name %></td>
+		<td class="ad_us_td"><%= t.email %></td>
+		<td class="ad_us_td"><%= t.tell %></td>
+		<td><%= link_to "編集画面へ",edit_user_registration_path  %></td>
+	</tr>
+
+	<% end %>
+
+</table>
+
