@@ -12,3 +12,16 @@ ja:
         ad_show_text: 詳細⑵
         url: URL
         key_word: キーワード
+
+  activerecord:
+    models:
+      admin: 投稿
+    attributes:
+      admin:
+        email: 邮件
+        password: 密码
+        admin_name: 管理人
+        aihao: 你的爱好
+        aichi: 你爱吃的东西
+        zayu: 座右铭
+        id_kari: ID

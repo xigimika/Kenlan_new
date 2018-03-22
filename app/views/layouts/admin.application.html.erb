@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>檢覽-KENLAN-</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<header>
+	<div class="container">
+		<nav class="nav navbar-nav navbar-left">
+	        <ul class="nav navbar-nav navbar-left">
+	        	<li class="">
+	               <span class="font_a"><%= link_to "檢覽", root_path, style: "color:white;" %></span>
+	               <span class="font"><%= link_to "-KENLAN-", root_path, style: "color:white;" %></span>
+	        	</li>
+	        </ul>
+	    </nav>
+
+        <nav class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="">
+            	<span class="font_text"><%= link_to "TOPページへ", admins_homes_path, style: "color:white;" %>&emsp;</span>
+            </li>
+            <li>
+            	<span class="font_text"><%= link_to "User一覧へ",admins_users_path, style: "color:white;" %>&emsp;</span>
+            </li>
+            <li>
+            	<span class="font_text"><%= link_to "Product一覧へ", admins_products_path, style: "color:white;" %>&emsp;</span>
+            </li>
+            <li class="">
+            	<span class="font_text"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
+            </li>
+          </ul>
+        </nav>
+
+
+	</div>
+</header>
+    <%= yield %>
+

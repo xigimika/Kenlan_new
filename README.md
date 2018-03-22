@@ -13,4 +13,29 @@
 </div>
 
 
+admin_edit_viewの最下部に記入されていた退会ボタン
+    <h3>Cancel my account</h3>
 
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+    <%= link_to "Back", :back %>
+
+
+adminのログイン画面最下部に記載されていた新規登録画面へ飛ぶためのタグ。記述したら新規登録画面へ進めるようになる。
+  <%= render "admins/shared/links" %>
+
+
+
+
+    <div class="category-control"><%= t.select :category, Product::CATEGORY_LIST.to_a, {}, {class:"form-control"} %>
+    </div>
+
+
+⬇️ チェックボックス（product_new）
+
+<%= t.check_box :category,{},checked_value = "true",unchecked_value = "false"  %>
+<%= label_tag :category, "music" %>
+<%= t.check_box 'category',{},checked_value = "true",unchecked_value = "false" %>
+<%= label_tag :category, "aaaaaa" %>
+<%= t.check_box 'category',{},checked_value = "true",unchecked_value = "false" %>
+<%= label_tag :category, "cccccccc" %>

@@ -75,7 +75,7 @@ gem 'kaminari'
 
 gem 'ransack'
 
-
+gem 'cocoon'
 
 
 

@@ -24,11 +24,31 @@
             <li class=""><span class="font_text"><%= link_to "ユーザページへ", users_path, style: "color:white;" %>&emsp;</span>
             </li>
             <li class="">
-            <span class="font_text"><%= link_to "ログアウト", destroy_user_session_path, method: :delete , style: "color:white;" %>&emsp;</span>
+            <span class="font_text"><%= link_to "ログアウト", destroy_user_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
             </li>
           </ul>
         </nav>
 
+      <% elsif admin_signed_in? %>
+        <!--adminログイン中-->
+        <nav class="nav navbar-nav navbar-left">
+          <ul class="nav navbar-nav navbar-left">
+        <li class="">
+               <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
+            <li class=""><span class="font_text"><%= link_to "管理者ページへ", admins_homes_path, style: "color:white;" %>&emsp;</span>
+            </li>
+            <li class="">
+            <span class="font_text"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
+            </li>
+          </ul>
+        </nav>
+
+  
         <% else %>
         <!-- ログアウト中 -->
         <nav class="nav navbar-nav navbar-left">
@@ -41,7 +61,7 @@
         <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
           <ul class="nav navbar-nav navbar-right">
             <li class="">
-              <span class="font_text"><%= link_to "本サイト概要", new_product_path, style: "color:white; margin:0px;" %>&emsp;</span>
+              <span class="font_text"><%= link_to "本サイト概要", informations_path, style: "color:white; margin:0px;" %>&emsp;</span>
             </li>
           </ul>
         </nav>
@@ -56,30 +76,52 @@
 
   <footer>
     <div class="sticky_f">
-    <% if user_signed_in? %>
-      <!--ログイン中-->
-      <nav class="nav navbar-nav navbar-left">
-        <div class=""> <%= link_to "運営への質問／問い合わせはこちら", new_product_path, style:"color: white;" %></div>
-      </nav>
-<br/>
-    <% else %>
-      <!-- ログアウト中 -->
+      <% if user_signed_in? %>
+        <!--ログイン中-->
+        <nav class="nav navbar-nav navbar-left">
+          <div class=""> <%= link_to "運営への質問／問い合わせはこちら", informations_path, style:"color: white;font-size:20px;" %></div>
+        </nav>
+        <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+          <div class=""> <%= link_to "投稿に関して", informations_note_path, style:"color: white;font-size:20px;" %> </div>
+         </nav>
+  <br/>
+        <p style="margin-right: 21.8%;">
+            <a style="color: white;">利用規約　|</a>
+            <a style="color: white;">プライバシーポリシー　|</a>
+            <a style="color: white;">サイトマップ</a>
+        </p>
+        <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserved.</small></p>
 
-	    <nav class="nav navbar-nav navbar-left">
-        <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", new_product_path, style:"color: white;" %></div>
-      </nav>
-	    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
-        <div class=""> <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;" %> </div>
-       </nav>
-<hr>
-    <% end %>
 
-	  	<p>
-	        <a style="color: white;">利用規約　|</a>
-	        <a style="color: white;">プライバシーポリシー　|</a>
-	        <a style="color: white;">サイトマップ</a>
-	    </p>
-	    <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserved.</small></p>
+      <% elsif admin_signed_in? %>
+      <!-- adminログイン中 -->
+        <p>
+            <a style="color: white;">利用規約　|</a>
+            <a style="color: white;">プライバシーポリシー　|</a>
+            <a style="color: white;">サイトマップ</a>
+        </p>
+        <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserved.</small></p>
+
+
+      <% else %>
+        <!-- ログアウト中 -->
+
+  	    <nav class="nav navbar-nav navbar-left">
+          <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", informations_path, style:"color: white;font-size:20px;" %></div>
+        </nav>
+  	    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+          <div class=""> <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;font-size:20px;" %> </div>
+         </nav>
+  <br/>
+  	  	<p style="margin-right: 26.5%;">
+  	        <a style="color: white;">利用規約　|</a>
+  	        <a style="color: white;">プライバシーポリシー　|</a>
+  	        <a style="color: white;">サイトマップ</a>
+  	    </p>
+  	    <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_session_path, style:"color:white; font-size: 85%;" %></p>
+
+      <% end %>
+
     </div>
   </footer>
 

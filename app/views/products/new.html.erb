@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <h1 style="text-align: center;">新規投稿</h1>
 
 
@@ -18,9 +19,18 @@
 	  	<%= t.attachment_field :ad_image, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
 
 	  <h3>カテゴリー</h3>
-	  <div class="category-control"><%= t.select :category, Product::CATEGORY_LIST.to_a, {}, {class:"form-control"} %>
-	  </div><br>
-	  	<p class="p_text"><b>選択肢に記述のないカテゴリーがございましたら、下記にご記載ください。</b></p>
+
+      <div class="category-control">
+      	<%= t.select :category, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+      </div><br>
+
+	  <div class="category-control">
+      	<%= t.select :category_2, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+      </div>
+
+
+	  <br>
+	  	<p class="p_text"><b>上記の選択肢に記述のないカテゴリーがございましたら、下記にご記載ください。</b></p>
 	  <div class="form-group">
 	  	<%= t.text_field :category_ent,:placeholder => "カテゴリー", class: "new_field" %></div>
 	<hr>
@@ -69,6 +79,7 @@
 	<br>
 	<%= t.submit '追加', data: {confirm: "追加しますか？"},class: "btn btn-primary" %>
   </div>
+<% end %>
 <% end %>
 <br>
 <br>

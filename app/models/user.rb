@@ -10,6 +10,14 @@ class User < ApplicationRecord
  has_many :products
 
 
+private
+  	def user_params
+    	params.require(:user).permit(:email,
+    								 :password,
+    								 :password_confirmation,
+    								 :remember_me, :pic_name,
+    								 			   :company_name)
+  	end
 
 	def favorited_by?(user)
 		favorites.where(user_id: user.id).exists?

@@ -1,0 +1,107 @@
+// Place all the styles related to the admins/homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+	@import "bootstrap-sprockets";
+    @import "bootstrap";
+
+.font{
+	font-size: 25px;
+    font-family: cursive;
+}
+
+.font_a{
+	font-size: 25px;
+    font-family: serif;
+    font-style: italic;
+}
+
+.ad_ad_index{
+	background-color: #180614;
+	font-size: 30px;
+	color: white;
+	padding: 17px 24px;
+	border-radius: 22px;
+    box-shadow: -2px -2px 24px #493759;
+}
+
+.ad_index{
+	margin-top: 5%;
+	text-align: center;
+}
+
+.ad_us_index{
+	background-color: gold;
+	font-size: 30px;
+	color: navy;
+	padding: 18px 36px;
+    border-radius: 22px;
+	box-shadow: 6px 4px 12px;
+}
+
+.us_index{
+	margin-top: 5%;
+	text-align: center;
+}
+
+.ad_pr_index{
+    background-color: ghostwhite;
+    font-size: 30px;
+    color: midnightblue;
+    padding: 18px 36px;
+    border-radius: 22px;
+    box-shadow: -2px -2px 24px;
+}
+
+.pr_index{
+	margin-top: 6%;
+	text-align: center;
+}
+
+
+/* admin_edit画面 */
+.table_a{
+	width: 70%;
+	margin-left: 16%;
+	margin-top: 2%;
+}
+
+.a_edit_ad_th{
+	background-color: black;
+	width: 20%;
+    font-size: 18px;
+    color: white;
+    text-align: right;
+}
+
+.a_edit_td{
+
+}
+
+.a_edit_box{
+	background-color: #ffffcc;
+	width:100%;
+	font-size: 18px;
+}
+
+.a_edit_th_t{
+	background-color: #fff9f5;
+	font-size: 15px;
+	width: 35%;
+}
+
+.a_t{
+	width: 80%;
+}
+
+.actions_ad{
+	text-align: right;
+}
+
+.actions_add{
+	text-align: center;
+}
+
+
+
+
