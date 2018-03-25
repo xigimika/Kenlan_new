@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
 
 
 
+
   protected
   # 以下のパラメーターを追加します
   def configure_permitted_parameters

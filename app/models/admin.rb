@@ -4,12 +4,23 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  with_options presence: true do
+	validates :pic_name
+	validates :aihao
+	validates :aichi
+	validates :zayu
+	validates :id_kari
+  end
+
+
+
 private
-  	def user_params
-    	params.require(:user).permit(:email,
+
+  	def admin_params
+  		params.require(:admin).permit(:email,
     								 :password,
     								 :password_confirmation,
-    								 :remember_me, :admin_name,
+    								 :remember_me, :pic_name,
     								 			   :aihao,
     								 			   :aichi,
     								 			   :zayu,

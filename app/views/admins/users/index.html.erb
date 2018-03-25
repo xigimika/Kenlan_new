@@ -1,6 +1,9 @@
-<h1>登録者情報一覧</h1>
+<h1 style="margin-left: 26px;">登録者情報一覧</h1>
 
-<%= link_to "AD情報一覧へ", admins_products_path %>
+<button type="button" class="btn btn-success" style="margin: 5px 0% 21px 6%;">
+	<%= link_to "AD情報一覧へ", admins_products_path, style:"color:black;" %>
+</button>
+
 
 <table class="ad_us_tab">
 	<tr class="ad_us_tr">
@@ -8,7 +11,7 @@
 		<td class="ad_us_td"><h4>担当者</h4></td>
 		<td class="ad_us_td"><h4>メールアドレス</h4></td>
 		<td class="ad_us_td"><h4>電話番号</h4></td>
-		<td><h4></h4></td>
+		<td class="ad_us_td_p"><h4></h4></td>
 	</tr>
 
 	<% @users.each do |t| %>
@@ -18,10 +21,23 @@
 		<td class="ad_us_td"><%= t.pic_name %></td>
 		<td class="ad_us_td"><%= t.email %></td>
 		<td class="ad_us_td"><%= t.tell %></td>
-		<td><%= link_to "編集画面へ",edit_user_registration_path  %></td>
+		<td class="ad_us_td_p">
+			<%= link_to "詳細画面へ",admins_user_path(t.id) , class: "btn btn-primary"  %>
+			&emsp;&emsp;
+			<%= link_to "編集画面へ",edit_admins_user_path(t.id) , class: "btn btn-primary"  %>
+			&emsp;&emsp;
+			<%= link_to "退会", admins_users_path(t.id), data: { confirm: "退会させますか？" },:method => :delete , class: "btn btn-danger" %>
+		</td>
 	</tr>
 
 	<% end %>
+
+<!-- 詳細のviewと編集用のviewを作成して、このページにも詳細ページへ飛ぶリンクを作成する -->
+
+
+
+
+	<tr><td><%= paginate @users, class: "pagenate" %></td></tr>
 
 </table>
 

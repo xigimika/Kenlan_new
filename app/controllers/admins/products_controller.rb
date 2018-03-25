@@ -1,8 +1,16 @@
 class Admins::ProductsController < ApplicationController
 
 	def index
-		@product = Product.all
+
+		@products = Product.page(params[:page]).per(10).order("created_at DESC")
+    	@u = Product.search
 	end
+
+	def search
+	    @u = Product.search(params[:q])
+	    @results = @u.result(distinct: true).page(params[:page]).per(10).order("created_at DESC")
+	    render :index
+  	end
 
 	def show
 		@products = Product.find(params[:id])
@@ -29,6 +37,9 @@ class Admins::ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(
             :category,
+            :category_2,
+            :category_detail,
+            :category_detail_2,
             :category_ent,
             :company_name,
             :company_name_kana,

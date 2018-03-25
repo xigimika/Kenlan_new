@@ -1,0 +1,96 @@
+<h2 style="text-align:center;">管理者用　ユーザー情報</h2>
+
+
+
+<table border="" class="table_t">
+
+   <tr>
+        <th class="user_show_th">
+          担当者名：&emsp;
+        </th>
+        <td colspan="2" class="user_show_td">
+          &emsp;<%= @user.pic_name %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_show_th">
+          氏名：&emsp;
+        </th>
+        <td class="user_show_td">
+          &emsp;<%= @user.last_name %>
+        </td>
+        <td class="user_show_td">
+          &emsp;<%= @user.first_name %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_show_th">
+          氏名かな：&emsp;
+        </th>
+        <td class="user_show_td">
+          &emsp;<%= @user.last_name_kana %>
+        </td>
+        <td class="user_show_td">
+          &emsp;<%= @user.first_name_kana %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_show_th">
+          会社名＜かな＞：&emsp;
+        </th>
+        <td class="user_show_td">
+          &emsp;<%= @user.company_name %>
+        </td>
+        <td class="user_show_td">
+          &emsp;<%= @user.company_name_kana %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_show_th">
+          電話番号：&emsp;
+        </th>
+        <td  colspan="2" class="user_show_td">
+          &emsp;<%= @user.tell %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_show_th">
+          郵便番号：&emsp;
+        </th>
+        <td  colspan="2" class="user_show_td">
+          &emsp;<%= @user.zip %>
+        </td>
+    </tr>
+
+
+    <tr>
+        <th class="user_show_th">
+          住所：&emsp;
+        </th>
+        <td  colspan="3" class="user_show_td">
+        	&emsp;<%= @user.address %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_show_th">
+          メールアドレス：&emsp;
+        </th>
+        <td colspan="3" class="user_show_td">
+          &emsp;<%= @user.email %>
+        </td>
+    </tr>
+</table>
+
+	<%= link_to "編集画面へ",edit_admins_user_path(@user.id) , class: "btn btn-primary", style: "padding: 8px 50px; font-size:20px; margin-top:2%; margin-left:29%;"  %>
+	<%= link_to "user一覧へ戻る", admins_users_path,  class: "btn btn-success", style: "padding: 8px 50px; font-size:20px; margin-top:2%; margin-left:12%;" %>
+
+<br>
+<br>
+<br>
+<br>

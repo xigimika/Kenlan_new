@@ -62,7 +62,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   protected
 def admin_params
-  params.require(:admin).permit(:admin_name, :aihao, :aichi, :zayu, :id_kari)
+  params.require(:admin).permit(:pic_name, :aihao, :aichi, :zayu, :id_kari, :email, :password)
 end
 
  def after_update_path_for(resource)
