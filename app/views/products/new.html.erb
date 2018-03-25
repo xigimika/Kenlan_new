@@ -14,18 +14,32 @@
 		    </ul>
 		</div>
     <% end %>
-  <div style="text-align: center;">
-	  <h3>画像投稿</h3>
-	  	<%= t.attachment_field :ad_image, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+  	<div style="text-align: center;">
+		<h3>画像投稿</h3>
+	  		<%= t.attachment_field :ad_image, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
 
-	  <h3>カテゴリー</h3>
+	  	<h3>カテゴリー</h3>
 
-      <div class="category-control">
-      	<%= t.select :category, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
-      </div><br>
+      	<div class="category-control">
+      		<%= t.select :category, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+      	</div>
+      	<br>
 
+		<p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
+		<p class="p_text">＊　選択肢では、＜例："仕事探し(転職)"＞のように表示されますが、実際詳細ページなどでは"仕事探し"の部分は省略され"＜転職＞"と表示されます。</p>
+		<div class="category-control">
+      		<%= t.select :category_detail, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+     	 </div>
+
+      <p class="p_text">カテゴリーを複数指定する場合のみ下記項目よりお選びください。</p>
 	  <div class="category-control">
-      	<%= t.select :category_2, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+      	<%= t.select :category_2, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+      </div>
+      <br>
+
+      <p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
+      <div class="category-control">
+      	<%= t.select :category_detail_2, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
       </div>
 
 

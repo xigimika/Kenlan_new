@@ -79,10 +79,10 @@
       <% if user_signed_in? %>
         <!--ログイン中-->
         <nav class="nav navbar-nav navbar-left">
-          <div class=""> <%= link_to "運営への質問／問い合わせはこちら", informations_path, style:"color: white;font-size:20px;" %></div>
+          <div class="">&emsp;<%= link_to "運営への質問／問い合わせはこちら", new_information_path, style:"color: white;font-size:20px;" %></div>
         </nav>
         <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
-          <div class=""> <%= link_to "投稿に関して", informations_note_path, style:"color: white;font-size:20px;" %> </div>
+          <div class=""> <%= link_to "投稿に関して", informations_note_path, style:"color: white;font-size:20px;" %>&emsp;</div>
          </nav>
   <br/>
         <p style="margin-right: 21.8%;">
@@ -107,7 +107,7 @@
         <!-- ログアウト中 -->
 
   	    <nav class="nav navbar-nav navbar-left">
-          <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", informations_path, style:"color: white;font-size:20px;" %></div>
+          <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", new_information_path, style:"color: white;font-size:20px;" %></div>
         </nav>
   	    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
           <div class=""> <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;font-size:20px;" %> </div>

@@ -2,6 +2,7 @@ class Admins::UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		@users = User.page(params[:page]).per(20).order("created_at DESC")
 	end
 
 	def show

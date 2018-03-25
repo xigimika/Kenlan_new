@@ -14,4 +14,34 @@
 }
 
 
+.note_no_image{
+	margin-left: 7%;
+}
+
+.note_text{
+	font-size: 16px;
+}
+
+.list_kakko{
+	counter-reset:item;
+ 	list-style:none;
+ 	font-size: 15px;
+}
+
+.list_kakko li:before{
+ content:"(" counters(item, "-") ")";
+ counter-increment:item;
+ margin-right:0.5em;
+}
+
+.list_kakko li{
+	padding-left:initial;
+ 	text-indent:-1.8em;
+}
+
+
+
+
+
+
 

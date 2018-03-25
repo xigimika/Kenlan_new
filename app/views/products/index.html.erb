@@ -8,7 +8,7 @@
 			<div class="col-xs-3">
 				<%= search_form_for @u, url: product_search_path do |f| %>
 				<p>
-		          <label style="margin-bottom: 0px; padding-top: 0px;margin-left: 2px;"><%= f.search_field :category_ent_or_category_or_company_name_or_ad_name_or_ad_show_or_key_word_cont,size:45 ,style:"width: 78%; height:32px;" %>
+		          <label style="margin-bottom: 0px; padding-top: 0px;margin-left: 2px;"><%= f.search_field :category_ent_or_category_or_category_detail_or_category_2_or_category_detail_2_or_company_name_or_ad_name_or_ad_show_or_key_word_cont,size:45 ,style:"width: 78%; height:32px;" %>
 		          <input id="submit_button" type="submit" class="btn btn-primary" name="submit" value="検　索" style="margin-bottom: 4px;"></label>
 		        </p>
     			<% end %>
@@ -21,7 +21,14 @@
 
 		  		<div class="col-xs-3">
 					<!-- カテゴリー -->
-					<p style="margin-bottom: 5px;margin-top: 3px;width: 220%;"><%= t.category %>&emsp;<%= t.category_2 %>&emsp;<%= t.category_ent %></p>
+					<p style="margin-bottom: 5px;margin-top: 3px;width: 220%;">
+						<%= t.category %>&emsp;
+						<%= t.category_detail %>&emsp;
+						<%= t.category_2 %>&emsp;
+						<%= t.category_detail_2 %>&emsp;
+						<%= t.category_ent %>
+						<% t.key_word %>
+					</p>
 
 					<%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size_index" %>
 
@@ -56,7 +63,13 @@
 
 		  		<div class="col-xs-3">
 					<!-- カテゴリー -->
-					<p style="margin-bottom: 5px;margin-top: 3px;width: 220%;"><%= t.category %>&emsp;<%= t.category_2 %>&emsp;<%= t.category_ent %></p>
+					<p style="margin-bottom: 5px;margin-top: 3px;width: 220%;">
+						<%= t.category %>
+						<%= t.category_detail %>&emsp;
+						<%= t.category_2 %>
+						<%= t.category_detail_2 %>&emsp;
+						<%= t.category_ent %>
+					</p>
 
 					<%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size_index" %>
 

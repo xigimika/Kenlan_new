@@ -1,0 +1,99 @@
+<h2 style="text-align:center;">管理者用　ユーザー編集</h2>
+
+
+<%= form_for @users, url: admins_users_path , html: {method: "PATCH"} do |f| %>
+
+<table border="" class="table_ed">
+
+   <tr>
+        <th class="user_edit_th">
+          担当者名&emsp;
+        </th>
+        <td colspan="2" class="user_edit_td">
+          <%= f.text_field :pic_name, autofocus: true, autocomplete: "pic_name", class: "edit_ad_us" %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_edit_th">
+          氏名&emsp;
+        </th>
+        <td class="user_edit_td">
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "edit_ad_us" %>
+        </td>
+        <td class="user_edit_td">
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "edit_ad_us" %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_edit_th">
+          氏名かな&emsp;
+        </th>
+        <td class="user_edit_td">
+          <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class: "edit_ad_us" %>
+        </td>
+        <td class="user_edit_td">
+          <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", class: "edit_ad_us" %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_edit_th">
+          会社名＜かな＞&emsp;
+        </th>
+        <td class="user_edit_td">
+          <%= f.text_field :company_name, autofocus: true, autocomplete: "company_name", class: "edit_ad_us" %>
+        </td>
+        <td class="user_edit_td">
+          <%= f.text_field :company_name_kana, autofocus: true, autocomplete: "company_name_kana", class: "edit_ad_us" %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_edit_th">
+          電話番号&emsp;
+        </th>
+        <td  colspan="2" class="user_edit_td">
+          <%= f.text_field :tell, autofocus: true, autocomplete: "tell", class: "edit_ad_us" %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_edit_th">
+          郵便番号&emsp;
+        </th>
+        <td  colspan="2" class="user_edit_td">
+          <%= f.text_field :zip, autofocus: true, autocomplete: "zip", class: "edit_ad_us" %>
+        </td>
+    </tr>
+
+
+    <tr>
+        <th class="user_edit_th">
+          住所&emsp;
+        </th>
+        <td  colspan="3" class="user_edit_td">
+        	<%= f.text_field :address, autofocus: true, autocomplete: "address", class: "edit_ad_us" %>
+        </td>
+    </tr>
+
+    <tr>
+        <th class="user_edit_th">
+          メールアドレス&emsp;
+        </th>
+        <td colspan="3" class="user_edit_td">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "edit_ad_us" %>
+        </td>
+    </tr>
+</table>
+
+<% end %>
+
+	<%= link_to "TOPへ",admins_homes_path , class: "btn btn-warning", style: "padding: 8px 50px; font-size:20px; margin-top:2%; margin-left:29%;"  %>
+	<%= link_to "user一覧へ戻る", admins_users_path, data: {confirm: "編集を中止する？"} ,  class: "btn btn-success", style: "padding: 8px 50px; font-size:20px; margin-top:2%; margin-left:12%;" %>
+
+<br>
+<br>
+<br>
+<br>

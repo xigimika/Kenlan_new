@@ -2,7 +2,11 @@
 <body>
 <div class="">
 	<div class="center-block clearfix show_box" style="padding: 0px; border-left-width: 2px; margin: 30px 15px 15px;">
-		<h4>カテゴリー：<%= @product.category %>&emsp;<%= @product.category_2 %>&emsp;<%= @product.category_ent %></h4>
+		<h4>カテゴリー：<%= @product.category %>
+					  <%= @product.category_detail %>&emsp;
+					  <%= @product.category_2 %>
+					  <%= @product.category_detail_2 %>&emsp;
+					  <%= @product.category_ent %></h4>
 		<div class="col-xs-5 image_ad">
 			<%= attachment_image_tag @product, :ad_image,  fallback: "no-image.jpg", class: "image_gazou" %>
 			<h4>URL：<a><%= @product.url %></a></h4>

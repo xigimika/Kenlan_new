@@ -1,6 +1,7 @@
-<h2 style="text-align: center;"><b>ログイン画面</b></h2>
+<h2 style="text-align: center;"><b>登録画面</b></h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
 <table border="" class="table_a">
 
@@ -10,7 +11,6 @@
     </th>
     <td class="a_edit_td">
       <%= f.text_field :pic_name, autofocus: true, autocomplete: "pic_name", class: "a_edit_box" %>
-    </td>
   </tr>
 
   <tr>
@@ -19,7 +19,6 @@
     </th>
     <td class="a_edit_td">
       <%= f.text_field :aihao, autofocus: true, autocomplete: "aihao", class: "a_edit_box" %>
-    </td>
   </tr>
 
   <tr>
@@ -28,7 +27,6 @@
     </th>
     <td class="a_edit_td">
       <%= f.text_field :aichi, autofocus: true, autocomplete: "aichi", class: "a_edit_box" %>
-    </td>
   </tr>
 
   <tr>
@@ -37,7 +35,6 @@
     </th>
     <td class="a_edit_td">
       <%= f.text_field :zayu, autofocus: true, autocomplete: "zayu", class: "a_edit_box" %>
-    </td>
   </tr>
 
   <tr>
@@ -46,7 +43,6 @@
     </th>
     <td class="a_edit_td">
       <%= f.text_field :id_kari, autofocus: true, autocomplete: "id_kari", class: "a_edit_box" %>
-    </td>
   </tr>
 
   <tr>
@@ -59,34 +55,33 @@
   </tr>
 
   <tr>
-    <th class="a_edit_ad_th">
-      密码：&emsp;
+    <th class="a_edit_ad_th">密码
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 字以上)：</em>
+        <% end %>
     </th>
     <td class="a_edit_td">
         <%= f.password_field :password, autocomplete: "off", class: "a_edit_box" %>
       </td>
     </tr>
 
+    <tr>
+      <th class="a_edit_ad_th">把密码再输入一边：&emsp;</th>
+      <td class="a_edit_td">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "a_edit_box" %>
+      </td>
+    </tr>
 </table>
-<table>
-    <% if devise_mapping.rememberable? -%>
-      <div class="field" style="text-align: center;font-size: 17px; margin-top: 1%;">
-          <%= f.check_box :remember_me %>
-          <%= f.label :保存密码 %>
-      </div>
-
-  <% end %>
-</table>
-
 
 <table class="">
-    <%= f.submit "管理者ページへ", class: "btn btn-success", style: "font-size:20px; padding: 8px 50px; margin-left: 43%;margin-top: 1%;" %>
+  <%= f.submit "管理者登録", class: "btn btn-success", style: "font-size:20px; padding: 8px 50px; margin-left: 43%;margin-top: 2%;" %>
 </table>
+
 <% end %>
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
+<%= render "admins/shared/links" %>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
