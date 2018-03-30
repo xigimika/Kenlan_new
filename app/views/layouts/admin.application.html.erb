@@ -7,6 +7,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<% if admin_signed_in? %>
 <header>
 	<div class="container">
 		<nav class="nav navbar-nav navbar-left">
@@ -29,6 +30,9 @@
             <li>
             	<span class="font_text"><%= link_to "Product一覧へ", admins_products_path, style: "color:white;" %>&emsp;</span>
             </li>
+            <<li>
+                <span class="font_text"><%= link_to "Mail一覧へ",admins_emails_path ,style: "color:white;" %>&emsp;</span>
+            </li>
             <li class="">
             	<span class="font_text"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
             </li>
@@ -38,5 +42,39 @@
 
 	</div>
 </header>
+
+<% else %>
+
+<header style="position: fixed;
+               top: 0;
+               left: 0;
+               right: 0;
+               z-index: 1;
+               background-color: black;
+               bottom: 90.5%;">
+    <nav class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="">
+           <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+        </li>
+      </ul>
+    </nav>
+    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="">
+          <span class="font_text"><%= link_to "本サイト概要", informations_path, style: "color:white; margin:0px;" %>&emsp;</span>
+        </li>
+      </ul>
+    </nav>
+    <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px; width: 100%; background-color: black;margin-left: 294px;margin-top: -20px;">
+      <ul class="nav navbar-nav navbar-center">
+        <li class="">
+          <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
+        </li>
+      </ul>
+    </nav>
+</header>
+
+<% end %>
     <%= yield %>
 

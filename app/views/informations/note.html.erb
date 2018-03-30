@@ -36,16 +36,29 @@
 	複数指定可能ですが、広告と関係のない単語は入力しないでください。</p>
 
 <br>
- <h4>＊　上記の他にご不明点などがございましたら<%= link_to "こちら", new_information_path,  style: "color: mediumblue; font-variant:ruby;" %>よりご連絡くださいませ。</h4>
-
-
+ <h4>＊　上記の他にご不明点などがございましたら<%= link_to "こちら", inquiries_path,  style: "color: mediumblue; font-variant:ruby;" %>よりご連絡くださいませ。</h4>
 
 
 </div>
-<% end %>
+
 
 <br>
 <br>
 <br>
 <br>
 <br>
+
+<% else %>
+
+<body>
+	<div class="info-visual_ad">
+		<div class="info-visual-content_ad">
+			<div class="talkbubble"><h1>登録しないと見れないよ！<br>一般ユーザーはGO BACK TOP！！！！</h1></div>
+		</div>
+	</div>
+</body>
+
+
+<% end %>
+
+

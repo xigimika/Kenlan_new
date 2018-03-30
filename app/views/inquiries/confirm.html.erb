@@ -1,0 +1,101 @@
+
+<div class="page-header" style="margin-left: 2%;
+  margin-top: 93px;">
+  <h1>お問い合わせ</h1>
+</div>
+
+<%= form_for (@inquiry) do |f| %>
+  <table class="table" style="width: 95%;margin-left: 2%;">
+
+    <tr class="conf_tr">
+      <th class="conf_th">名前&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :name %>
+        &emsp;<%= @inquiry.name %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">名前（かな）</th>
+      <td class="conf_td">
+        <%= f.hidden_field :name_kana %>
+        &emsp;<%= @inquiry.name_kana %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">性別&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :sex %>
+       &emsp;<%= @inquiry.sex %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">法人名&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :company_name %>
+        &emsp;<%= @inquiry.company_name %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">役職&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :position %>
+        &emsp;<%= @inquiry.position %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">住所&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :address %>
+        &emsp;<%= @inquiry.address %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">電話番号&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :tell %>
+        &emsp;<%= @inquiry.tell %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">メールアドレス&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :email %>
+        &emsp;<%= @inquiry.email %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">お問い合わせ内容(1)&emsp;</th>
+      <td class="conf_td">
+        <%= f.hidden_field :naiyou %>
+        &emsp;<%= @inquiry.naiyou %>
+      </td>
+    </tr>
+
+    <tr class="conf_tr">
+      <th class="conf_th">お問い合わせ内容(2)&emsp;</th>
+      <td class="conf_td" style="line-height: 26px;">
+        <%= f.hidden_field :text %>
+        <%= simple_format(@inquiry.text) %>
+      </td>
+    </tr>
+  </table>
+  <%= f.submit '送信', :class => 'btn btn-primary',:style => "padding: 8px 72px; font-size:20px; margin-left:2%;" %>
+  <%= link_to "前のページに戻る", :back, class: "btn btn-success", style: "padding: 8px 50px; font-size:20px;margin-left:2%;" %>
+<% end %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+

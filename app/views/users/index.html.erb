@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">TOP</h1>
+<h1 style="text-align: center;margin-top: 7%;">TOP</h1>
 <hr>
 
 <%= link_to "ユーザー情報の確認・編集はこちら", edit_user_registration_path, class: "btn btn-warning", style: "color:black;font-size: 20px; margin-left: 38%; padding: 23px 8px;" %>
@@ -22,7 +22,7 @@
 		      </label>
 		        </p>
     			<% end %>
-
+    			<thead>
 					<tr>
 						<td><h4>タイトル</h4></td>
 						<td></td>
@@ -30,7 +30,9 @@
 						<td></td>
 						<td></td>
 					</tr>
+				</thead>
 
+				<tbody>
 					<% if @results.presence %>
 						<% @results.each do |t| %>
 						<tr>
@@ -58,12 +60,14 @@
 							<td>
 								<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success", style: "color:black;" %>
 							</td>
-							<td><%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
+							<td><%=link_to "商品を削除する", user_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
 						</tr>
 					<% end %>
+				</tbody>
+				<tfoot>
 					<tr><td><%= paginate @products, class: "pagenate" %></td></tr>
 					<% end %>
-
+				</tfoot>
 
 				</table>
 		</div>

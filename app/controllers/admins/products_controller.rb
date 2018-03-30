@@ -1,5 +1,7 @@
 class Admins::ProductsController < ApplicationController
 
+layout 'admin.application'
+
 	def index
 
 		@products = Product.page(params[:page]).per(10).order("created_at DESC")
@@ -29,7 +31,8 @@ class Admins::ProductsController < ApplicationController
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		redirect_to admins_products_path
+		redirect_to :controller => 'admins/products',:action => 'index'
+
 	end
 
   private
@@ -50,6 +53,8 @@ class Admins::ProductsController < ApplicationController
             :ad_show_text,
             :url)
     end
+
+
 
 
 end

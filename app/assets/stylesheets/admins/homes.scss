@@ -59,6 +59,31 @@
 }
 
 
+.ad_mail_tab{
+	width: 96%;
+    text-align: center;
+    margin-left: 2%;
+    line-height: 42px;
+}
+
+.ad_mail_tr{
+	border: ridge;
+}
+
+
+.ad_mail_td{
+	border-right: groove;
+	font-size: 18px;
+/*	width: 14%;*/
+}
+
+.ad_mail_td_n{
+	width: 46px;
+	border-right: groove;
+}
+
+
+
 /* admin_edit画面 */
 .table_a{
 	width: 70%;

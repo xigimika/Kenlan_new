@@ -8,7 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<header>
+<header style="position: fixed;
+               top: 0;
+               left: 0;
+               right: 0;
+               z-index: 1;
+               background-color: black;
+               bottom: 90.5%;">
 	<div class="container">
 		<% if user_signed_in? %>
         <!--ログイン中-->
@@ -25,6 +31,13 @@
             </li>
             <li class="">
             <span class="font_text"><%= link_to "ログアウト", destroy_user_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px; width: 100%; background-color: black;margin-left: 294px;margin-top: -20px;">
+          <ul class="nav navbar-nav navbar-center">
+            <li class="">
+              <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
             </li>
           </ul>
         </nav>
@@ -47,6 +60,13 @@
             </li>
           </ul>
         </nav>
+        <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px; width: 100%; background-color: black;margin-left: 294px;margin-top: -20px;">
+          <ul class="nav navbar-nav navbar-center">
+            <li class="">
+              <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
+            </li>
+          </ul>
+        </nav>
 
   
         <% else %>
@@ -65,6 +85,13 @@
             </li>
           </ul>
         </nav>
+        <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px; width: 100%; background-color: black;margin-left: 294px;margin-top: -20px;">
+          <ul class="nav navbar-nav navbar-center">
+            <li class="">
+              <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
+            </li>
+          </ul>
+        </nav>
 
         <% end %>
 	</div>
@@ -79,7 +106,7 @@
       <% if user_signed_in? %>
         <!--ログイン中-->
         <nav class="nav navbar-nav navbar-left">
-          <div class="">&emsp;<%= link_to "運営への質問／問い合わせはこちら", new_information_path, style:"color: white;font-size:20px;" %></div>
+          <div class="">&emsp;<%= link_to "運営への質問／問い合わせはこちら", inquiries_path, style:"color: white;font-size:20px;" %></div>
         </nav>
         <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
           <div class=""> <%= link_to "投稿に関して", informations_note_path, style:"color: white;font-size:20px;" %>&emsp;</div>
@@ -107,7 +134,7 @@
         <!-- ログアウト中 -->
 
   	    <nav class="nav navbar-nav navbar-left">
-          <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", new_information_path, style:"color: white;font-size:20px;" %></div>
+          <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", inquiries_path, style:"color: white;font-size:20px;" %></div>
         </nav>
   	    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
           <div class=""> <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;font-size:20px;" %> </div>
@@ -118,7 +145,7 @@
   	        <a style="color: white;">プライバシーポリシー　|</a>
   	        <a style="color: white;">サイトマップ</a>
   	    </p>
-  	    <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_session_path, style:"color:white; font-size: 85%;" %></p>
+  	    <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_registration_path, style:"color:white; font-size: 85%;" %></p>
 
       <% end %>
 

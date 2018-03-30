@@ -1,0 +1,89 @@
+<% if admin_signed_in? %>
+<br>
+<br>
+<br>
+
+<table style="width: 65%;margin-left: 15%;">
+	<h3 style="text-align:center;">Webサイトからお問い合わせがありました。</h3>
+
+	<tr>
+		<th colspan="2" class="email_line"></th>
+	</tr>
+
+	<tr>
+		<th class="email_th" style="padding-top: 15px;">名前：&emsp;&emsp;</th>
+		<td class="email_td" style="padding-top: 15px;"><%= @inquiry.name %></td>
+	</tr>
+
+	<tr>
+		<th class="email_th">名前（ふりがな）：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.name_kana %></td>
+	</tr>
+
+	<tr>
+		<th class="email_th">性別：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.sex %></td>
+	</tr>
+
+
+	<tr>
+		<th class="email_th">法人名：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.company_name %></td>
+	</tr>
+
+
+	<tr>
+		<th class="email_th">役職：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.position %></td>
+	</tr>
+
+
+	<tr>
+		<th class="email_th">住所：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.address %></td>
+	</tr>
+
+
+	<tr>
+		<th class="email_th">電話番号：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.tell %></td>
+	</tr>
+
+
+	<tr>
+		<th class="email_th">メールアドレス：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.email %></td>
+	</tr>
+
+
+	<tr>
+		<th class="email_th">お問い合わせ内容(1)：&emsp;&emsp;</th>
+		<td class="email_td"><%= @inquiry.naiyou %></td>
+	</tr>
+
+	<tr>
+		<th class="email_th">お問い合わせ内容(2)：&emsp;&emsp;</th>
+		<td class="email_td" style="line-height: 26px;"><%= @inquiry.text %></td>
+	</tr>
+
+	<tr>
+		<th colspan="2" class="email_line">
+		</th>
+	</tr>
+
+
+</table>
+
+<br>
+<div style="margin-left: 15%;">
+	<%= link_to "Mail一覧に戻る",admins_emails_path, class: "btn btn-primary" ,style: "font-size:19px;" %>&emsp;&emsp;
+	<%=link_to "削除", inquiry_path, method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger",style: "font-size:18px;" %></td>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<% end %>
+

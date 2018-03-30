@@ -48,6 +48,18 @@
 	background-size: cover;
 }
 
+.se_label{
+	margin-bottom: 0px;
+	padding-top: 0px;
+}
+
+
+
+
+
+
+
+
 .in_td{
 	/*width: 50%;*/
 	overflow-y: scroll;
@@ -83,25 +95,11 @@
 }
 
 
-.index_title{
-	text-align: center;
-	text-decoration: underline;
-    text-shadow: 16px -4px 6px;
-    font-family: cursive;
-    word-spacing: 8px;
-    font-weight: bolder;
-    font-style: italic;
-    height: 44px;
-    margin: 0px;
-    padding-top: 4px;
-    background-color: black;
-    font-size: 31px;
-    letter-spacing: 1mm;
-}
+
 
 .p_danraku{
 	margin-bottom: 0px;
-	padding-top: 16px;
+	padding-top: 51px;
 	margin: 0px;
 	border-bottom: 3px solid #eeeeee;
 	background-color: black;
@@ -135,8 +133,21 @@
 
 .optgroup {
      font-style:normal;
-     }
+}
 
+.pro_new_dame{
+	text-align: center;
+	margin-top: 8%;
+	margin-bottom: 2%;
+}
+
+.pro_new_dame_imag{
+	background-image: url(lgf01a201312080500.jpg);
+	width: 55%;
+	height: 450px;
+	background-size: 100% 100%;
+	margin-left: 22%;
+}
 
 
 
