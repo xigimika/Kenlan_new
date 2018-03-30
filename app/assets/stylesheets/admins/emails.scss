@@ -1,0 +1,38 @@
+// Place all the styles related to the admins::emails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.email_th{
+	width: 22%;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+    line-height: 34px;
+}
+
+
+.email_td{
+	border-bottom: 1px solid #ddd;
+	line-height: 34px;
+}
+
+
+.email_line{
+	padding-top: 20px;
+	border-bottom: 1px dashed;
+}
+
+
+
+table {
+  counter-reset: rowCount;
+}
+
+table > tbody > tr {
+  counter-increment: rowCount;
+}
+
+table > tbody > tr > td:first-child::before {
+  content: counter(rowCount);
+}

@@ -1,8 +1,8 @@
+<% if admin_signed_in? %>
+
+
 <h1 style="margin-left: 26px;" >登録履歴</h1>
 
-	<button type="button" class="btn btn-warning" style="margin: -64px 0% 1% 15%;">
-		<%= link_to "ユーザ情報一覧へ", admins_users_path ,style:"color:black;" %>
-	</button>
 
 
 	<%= search_form_for @u, url: admins_product_search_path do |f| %>
@@ -14,55 +14,19 @@
 
 
 	<table class="ad_pro_tab">
-		<tr class="ad_pro_tr">
-			<td class="ad_pro_td"><h4>画像</h4></td>
-			<td class="ad_pro_td"><h4>ADタイトル</h4></td>
-			<td class="ad_pro_td"><h4>会社名</h4></td>
-			<td class="ad_pro_td"><h4>カテゴリー</h4></td>
-			<td><h4></h4></td>
-		</tr>
+		<thead>
+			<tr class="ad_pro_tr">
+				<td class="ad_pro_td"><h4></h4></td>
+				<td class="ad_pro_td"><h4>画像</h4></td>
+				<td class="ad_pro_td"><h4>ADタイトル</h4></td>
+				<td class="ad_pro_td"><h4>会社名</h4></td>
+				<td class="ad_pro_td"><h4>カテゴリー</h4></td>
+			</tr>
+		</thead>
 
-		<% if @results.presence %>
-			<% @results.each do |t| %>
-
-		<tr class="ad_pro_tr">
-			<td class="ad_pro_td">
-				<%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size" %>
-			</td>
-			<td class="ad_pro_td">
-				<%= t.ad_name %>
-			</td>
-			<td class="ad_pro_td">
-				<%= t.company_name %>
-			</td>
-			<td class="ad_pro_td">
-				<%= t.category %>
-				<%= t.category_2 %>
-				<% t.category_detail %>
-				<% t.category_detail_2 %>
-				<% t.category_ent %>
-				<% t.key_word %>
-				<% t.ad_name %>
-			</td>
-			<td>
-				<%= link_to "編集画面へ",edit_product_path(t.id), class: "btn btn-success", style: "color:black;"  %>
-				<%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %>
-			</td>
-		</tr>
-
-		<% end %>
-		<tr><td><%= paginate @results, class: "pagenate" %></td></tr>
-
-
-
-		<% elsif @products.blank? %>
-			<h2>&emsp;&emsp;＊検索結果はありません</h2>
-
-		<% else %>
-
-
-
-		<% @products.each do |t| %>
+		<tbody>
+			<% if @results.presence %>
+				<% @results.each do |t| %>
 
 			<tr class="ad_pro_tr">
 				<td class="ad_pro_td">
@@ -89,15 +53,56 @@
 				</td>
 			</tr>
 
-		<% end %>
+			<% end %>
+			<tr><td><%= paginate @results, class: "pagenate" %></td></tr>
 
-		<tr><td><%= paginate @products, class: "pagenate" %></td></tr>
 
-	<% end %>
+
+			<% elsif @products.blank? %>
+				<h2>&emsp;&emsp;＊検索結果はありません</h2>
+
+			<% else %>
+
+
+
+			<% @products.each do |t| %>
+
+				<tr class="ad_pro_tr">
+					<td class="ad_pro_td">
+						<%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size" %>
+					</td>
+					<td class="ad_pro_td">
+						<%= t.ad_name %>
+					</td>
+					<td class="ad_pro_td">
+						<%= t.company_name %>
+					</td>
+					<td class="ad_pro_td">
+						<%= t.category %>
+						<%= t.category_2 %>
+						<% t.category_detail %>
+						<% t.category_detail_2 %>
+						<% t.category_ent %>
+						<% t.key_word %>
+						<% t.ad_name %>
+					</td>
+					<td>
+						<%= link_to "編集画面へ",edit_product_path(id: t.id), class: "btn btn-success", style: "color:black;"  %>
+						<%=link_to "商品を削除する", admins_product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %>
+					</td>
+				</tr>
+
+			<% end %>
+	</tbody>
+	<tfoot>
+			<tr><td><%= paginate @products, class: "pagenate" %></td></tr>
+
+			<% end %>
+	</tfoot>
 
 </table>
 
-
+<% end %>
 
 <br/>
 <br/>

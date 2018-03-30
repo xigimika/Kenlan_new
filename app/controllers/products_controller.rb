@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+ before_action :login_check, only: [:edit]
   def top
   	
   end
@@ -69,6 +69,16 @@ class ProductsController < ApplicationController
             :ad_show,
             :ad_show_text,
             :url)
+    end
+
+    def login_check
+      if user_signed_in? || admin_signed_in?
+        @product = Product.find(params[:id])
+       render 'edit'
+      else
+        redirect_to root_path
+
+      end
     end
 
 end

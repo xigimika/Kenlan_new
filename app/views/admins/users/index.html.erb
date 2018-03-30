@@ -1,43 +1,44 @@
-<h1 style="margin-left: 26px;">登録者情報一覧</h1>
+<% if admin_signed_in? %>
 
-<button type="button" class="btn btn-success" style="margin: 5px 0% 21px 6%;">
-	<%= link_to "AD情報一覧へ", admins_products_path, style:"color:black;" %>
-</button>
+<h1 style="margin-left: 26px;">登録者情報一覧</h1>
 
 
 <table class="ad_us_tab">
-	<tr class="ad_us_tr">
-		<td class="ad_us_td"><h4>会社名</h4></td>
-		<td class="ad_us_td"><h4>担当者</h4></td>
-		<td class="ad_us_td"><h4>メールアドレス</h4></td>
-		<td class="ad_us_td"><h4>電話番号</h4></td>
-		<td class="ad_us_td_p"><h4></h4></td>
-	</tr>
+	<thead>
+		<tr class="ad_us_tr">
+			<td class="ad_us_td"><h4>会社名</h4></td>
+			<td class="ad_us_td"><h4>担当者</h4></td>
+			<td class="ad_us_td"><h4>メールアドレス</h4></td>
+			<td class="ad_us_td"><h4>電話番号</h4></td>
+			<td class="ad_us_td_p"><h4></h4></td>
+		</tr>
+	</thead>
 
-	<% @users.each do |t| %>
+	<tbody>
+		<% @users.each do |t| %>
 
-	<tr class="ad_us_tr">
-		<td class="ad_us_td"><%= t.company_name %></td>
-		<td class="ad_us_td"><%= t.pic_name %></td>
-		<td class="ad_us_td"><%= t.email %></td>
-		<td class="ad_us_td"><%= t.tell %></td>
-		<td class="ad_us_td_p">
-			<%= link_to "詳細画面へ",admins_user_path(t.id) , class: "btn btn-primary"  %>
-			&emsp;&emsp;
-			<%= link_to "編集画面へ",edit_admins_user_path(t.id) , class: "btn btn-primary"  %>
-			&emsp;&emsp;
-			<%= link_to "退会", admins_users_path(t.id), data: { confirm: "退会させますか？" },:method => :delete , class: "btn btn-danger" %>
-		</td>
-	</tr>
+		<tr class="ad_us_tr">
+			<td class="ad_us_td"><%= t.company_name %></td>
+			<td class="ad_us_td"><%= t.pic_name %></td>
+			<td class="ad_us_td"><%= t.email %></td>
+			<td class="ad_us_td"><%= t.tell %></td>
+			<td class="ad_us_td_p">
+				<%= link_to "詳細画面へ",admins_user_path(t.id) , class: "btn btn-primary"  %>
+				&emsp;&emsp;
+				<%= link_to "編集画面へ",edit_admins_user_path(t.id) , class: "btn btn-primary"  %>
+				&emsp;&emsp;
+				<%= link_to "退会", admins_users_path(t.id), data: { confirm: "退会させますか？" },:method => :delete , class: "btn btn-danger" %>
+			</td>
+		</tr>
 
-	<% end %>
-
+		<% end %>
+	</tbody>
 <!-- 詳細のviewと編集用のviewを作成して、このページにも詳細ページへ飛ぶリンクを作成する -->
 
-
-
-
-	<tr><td><%= paginate @users, class: "pagenate" %></td></tr>
+	<tfoot>
+		<tr><td><%= paginate @users, class: "pagenate" %></td></tr>
+	</tfoot>
 
 </table>
 
+<% end %>

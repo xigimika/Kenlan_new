@@ -44,7 +44,7 @@ before_action :authenticate_user!
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-      redirect_to root_path
+      redirect_to users_path
   end
 
 

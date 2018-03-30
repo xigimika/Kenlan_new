@@ -1,0 +1,45 @@
+<% if admin_signed_in? %>
+<h1 style="text-align: center;">お問い合わせE-MAIL一覧</h1>
+<br>
+
+<table class="ad_mail_tab">
+	<thead>
+		<tr class="ad_mail_tr">
+			<td class="ad_mail_td_n" style="width:46px; "></td>
+			<td class="ad_mail_td" style="width:16%; "><h4>法人名</h4></td>
+			<td class="ad_mail_td" style="width:15%; "><h4>メールアドレス</h4></td>
+			<td class="ad_mail_td"><h4>電話番号</h4></td>
+			<td class="ad_mail_td" style="width:14%; "><h4>お問い合わせ内容</h4></td>
+			<td class="ad_mail_td"><h4>受信日時</h4></td>
+			<td class="ad_mail_td" style="width:18%; "><h4></h4></td>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @inquiries.each do |f| %>
+
+		<tr class="ad_mail_tr">
+			<td class="ad_mail_td"></td>
+			<td class="ad_mail_td"><%= f.company_name %></td>
+			<td class="ad_mail_td"><%= f.email %></td>
+			<td class="ad_mail_td"><%= f.tell %></td>
+			<td class="ad_mail_td"><%= f.naiyou %></td>
+			<td class="ad_mail_td"><%= f.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+			<td class="ad_mail_td">
+				<%= link_to "本文を見る",admins_email_path(f.id),class: "btn btn-primary" %>
+				&emsp;&emsp;
+				<%=link_to "削除", inquiry_path(f.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
+		</tr>
+		<% end %>
+
+		<tr><th><%= paginate @inquiries, class: "pagenate" %></th></tr>
+	</tbody>
+
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<% end %>
+

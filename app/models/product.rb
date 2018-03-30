@@ -4,6 +4,17 @@ attachment :ad_image
 
 belongs_to :user
 
+# attr_accessible :category_ent,
+#                 :category,
+#                 :category_detail,
+#                 :category_2,
+#                 :category_detail_2,
+#                 :company_name,
+#                 :ad_name,
+#                 :ad_show,
+#                 :key_word
+
+
 
 validates_presence_of :category, :company_name, :ad_name,
  					:ad_show, :ad_show_text, :url, :key_word

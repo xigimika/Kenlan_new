@@ -1,5 +1,7 @@
 class Admins::UsersController < ApplicationController
 
+layout 'admin.application'
+
 	def index
 		@users = User.all
 		@users = User.page(params[:page]).per(20).order("created_at DESC")
@@ -39,6 +41,7 @@ class Admins::UsersController < ApplicationController
 									 :address,
 									 :tell)
 	end
+
 
 
 end

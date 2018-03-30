@@ -1,99 +1,105 @@
 <% if user_signed_in? %>
-<h1 style="text-align: center;">新規投稿</h1>
+	<h1 style="text-align: center;margin-top: 7%;">新規投稿</h1>
 
 
-<%= form_for @product, url: products_path do |t| %>
+	<%= form_for @product, url: products_path do |t| %>
 
-	<% if @product.errors.any? %>
-		<div id="error_explanation" >
-	        <h3><%= @product.errors.count %>件のエラーが発生しました。</h3>
-	        <ul>
-		        <% @product.errors.full_messages.each do |message| %>
-		            <li><%= message %></li>
-		        <% end %>
-		    </ul>
-		</div>
-    <% end %>
-  	<div style="text-align: center;">
-		<h3>画像投稿</h3>
-	  		<%= t.attachment_field :ad_image, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<% if @product.errors.any? %>
+			<div id="error_explanation" >
+		        <h3><%= @product.errors.count %>件のエラーが発生しました。</h3>
+		        <ul>
+			        <% @product.errors.full_messages.each do |message| %>
+			            <li><%= message %></li>
+			        <% end %>
+			    </ul>
+			</div>
+	    <% end %>
+	  	<div style="text-align: center;">
+			<h3>画像投稿</h3>
+		  		<%= t.attachment_field :ad_image, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
 
-	  	<h3>カテゴリー</h3>
+		  	<h3>カテゴリー</h3>
 
-      	<div class="category-control">
-      		<%= t.select :category, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
-      	</div>
-      	<br>
+	      	<div class="category-control">
+	      		<%= t.select :category, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+	      	</div>
+	      	<br>
 
-		<p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
-		<p class="p_text">＊　選択肢では、＜例："仕事探し(転職)"＞のように表示されますが、実際詳細ページなどでは"仕事探し"の部分は省略され"＜転職＞"と表示されます。</p>
-		<div class="category-control">
-      		<%= t.select :category_detail, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
-     	 </div>
+			<p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
+			<p class="p_text">＊　選択肢では、＜例："仕事探し(転職)"＞のように表示されますが、実際詳細ページなどでは"仕事探し"の部分は省略され"＜転職＞"と表示されます。</p>
+			<div class="category-control">
+	      		<%= t.select :category_detail, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+	     	 </div>
 
-      <p class="p_text">カテゴリーを複数指定する場合のみ下記項目よりお選びください。</p>
-	  <div class="category-control">
-      	<%= t.select :category_2, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
-      </div>
-      <br>
+	      <p class="p_text">カテゴリーを複数指定する場合のみ下記項目よりお選びください。</p>
+		  <div class="category-control">
+	      	<%= t.select :category_2, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+	      </div>
+	      <br>
 
-      <p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
-      <div class="category-control">
-      	<%= t.select :category_detail_2, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
-      </div>
+	      <p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
+	      <div class="category-control">
+	      	<%= t.select :category_detail_2, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
+	      </div>
 
 
-	  <br>
-	  	<p class="p_text"><b>上記の選択肢に記述のないカテゴリーがございましたら、下記にご記載ください。</b></p>
-	  <div class="form-group">
-	  	<%= t.text_field :category_ent,:placeholder => "カテゴリー", class: "new_field" %></div>
-	<hr>
+		  <br>
+		  	<p class="p_text"><b>上記の選択肢に記述のないカテゴリーがございましたら、下記にご記載ください。</b></p>
+		  <div class="form-group">
+		  	<%= t.text_field :category_ent,:placeholder => "カテゴリー", class: "new_field" %></div>
+		<hr>
 
-	  <h3>企業名</h3>
-	  <div class="form-group">
-	  	<%= t.text_field :company_name,:placeholder => "企業名", class: "new_field" %>
+		  <h3>企業名</h3>
+		  <div class="form-group">
+		  	<%= t.text_field :company_name,:placeholder => "企業名", class: "new_field" %>
+		  </div>
+		  	<p class="p_text">TOPページと詳細ページで表示されるサイトの企業名になります。</p>
+		<hr>
+
+		  <h3>タイトル</h3>
+		  <div class="form-group">
+		  	<%= t.text_field :ad_name,:placeholder => "タイトル", class: "new_field" %>
+		  </div>
+		  	<p class="p_text">一覧ページ、または詳細ページで表示される広告タイトル</p>
+		<hr>
+
+		  <h3>詳細⑴‹TOPページで表示される短文を記入›</h3>
+		  <div class="form-group">
+		  	<%= t.text_area :ad_show,:placeholder => "詳細", class: "new_field_text" %>
+		  </div>
+		  	<p class="p_text">TOPページで表示されるこの広告の説明を<b>250文字以内</b>で記入してください</p>
+		<hr>
+
+		<h3>詳細⑵‹詳細ページで表示される文章を記入›</h3>
+		  <div class="form-group">
+		  	<%= t.text_area :ad_show_text,:placeholder => "詳細",class: "new_field_text" %>
+		  </div>
+		 	<p class="p_text">詳細ページで表示されるこの広告の説明を<b>500文字前後</b>で記入してください</p>
+		<hr>
+
+		  <h3>URL</h3>
+		  <div class="form-group">
+		  	<%= t.text_field :url,:placeholder => "URL", class: "new_field" %>
+		  </div>
+		  	<p class="p_text">リンクを飛ばすためのURLを記入してください</p>
+		<hr>
+
+		  <h3>検索キーワード</h3>
+		  <div class="form-group">
+		  	<%= t.text_field :key_word,:placeholder => "キーワード", class: "new_field" %>
+		  </div>
+		  	<p class="p_text">閲覧者が検索をかける際、ヒットするキーワードを記入ください</p>
+
+		<br>
+		<%= t.submit '追加', data: {confirm: "追加しますか？"},class: "btn btn-primary" %>
 	  </div>
-	  	<p class="p_text">TOPページと詳細ページで表示されるサイトの企業名になります。</p>
-	<hr>
+	<% end %>
 
-	  <h3>タイトル</h3>
-	  <div class="form-group">
-	  	<%= t.text_field :ad_name,:placeholder => "タイトル", class: "new_field" %>
-	  </div>
-	  	<p class="p_text">一覧ページ、または詳細ページで表示される広告タイトル</p>
-	<hr>
 
-	  <h3>詳細⑴‹TOPページで表示される短文を記入›</h3>
-	  <div class="form-group">
-	  	<%= t.text_area :ad_show,:placeholder => "詳細", class: "new_field_text" %>
-	  </div>
-	  	<p class="p_text">TOPページで表示されるこの広告の説明を<b>250文字以内</b>で記入してください</p>
-	<hr>
+	<% else %>
+		<h1  class="pro_new_dame">何URLでココ飛んでんねん、前のページもどれや！！</h1>
+		<div class="pro_new_dame_imag"></div>
 
-	<h3>詳細⑵‹詳細ページで表示される文章を記入›</h3>
-	  <div class="form-group">
-	  	<%= t.text_area :ad_show_text,:placeholder => "詳細",class: "new_field_text" %>
-	  </div>
-	 	<p class="p_text">詳細ページで表示されるこの広告の説明を<b>500文字前後</b>で記入してください</p>
-	<hr>
-
-	  <h3>URL</h3>
-	  <div class="form-group">
-	  	<%= t.text_field :url,:placeholder => "URL", class: "new_field" %>
-	  </div>
-	  	<p class="p_text">リンクを飛ばすためのURLを記入してください</p>
-	<hr>
-
-	  <h3>検索キーワード</h3>
-	  <div class="form-group">
-	  	<%= t.text_field :key_word,:placeholder => "キーワード", class: "new_field" %>
-	  </div>
-	  	<p class="p_text">閲覧者が検索をかける際、ヒットするキーワードを記入ください</p>
-
-	<br>
-	<%= t.submit '追加', data: {confirm: "追加しますか？"},class: "btn btn-primary" %>
-  </div>
-<% end %>
 <% end %>
 <br>
 <br>

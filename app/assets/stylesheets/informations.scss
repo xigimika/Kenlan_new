@@ -9,7 +9,7 @@
     border-right: 2px groove #95937B;
     border-top: 2px groove #95937B;
     box-shadow: -3px 2px 15px;
-    margin: 30px 30px 15px;
+    margin: 98px 30px 15px;
     padding: 2px 10px 14px 7px;
 }
 
@@ -40,8 +40,46 @@
 }
 
 
+.info-visual_ad{
+    background-image: url(Cats_Ginger_color_Fluffy_513215_1365x1024.jpg);
+    max-width: 100%;
+    max-height: 100%;
+    background-size: 100% 100%;
+}
+
+.info-visual-content_ad{
+    height: 750px;
+    /*background-color: rgba( 0, 0, 0, 0.5);*/
+    margin: 0%;
+    padding-top: 31%;
+    text-align: center;
+    color: black;
+    font-size: 40px;
+}
 
 
+.talkbubble {
+   width: 50%;
+   height: 118px;
+   background: peachpuff;
+   position: relative;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border-radius:         33px;
+   margin-left: 26%;
+   padding-top: 1px;
+}
+.talkbubble h1:before {
+    content: "";
+    position: absolute;
+    right: 56%;
+    bottom: 110px;
+    width: 0px;
+    height: 0px;
+    border-top: 104px solid transparent;
+    border-right: 98px solid peachpuff;
+    border-bottom: 0px solid transparent;
+}
 
 
 
