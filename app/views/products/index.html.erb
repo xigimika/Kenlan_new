@@ -8,26 +8,34 @@
 			<div class="col-xs-3">
 				<div class=" affix" style="padding: 4px 0px 0px 2px; width: 24%;">
 					<div class="" style="padding: 9px 1px 1px 4px;background-color: lightblue;text-align: center;">
+
 						<%= search_form_for @u, url: product_search_path do |f| %>
 
-				          <label class="se_label">
-				          	<div>
-					          	<%= f.label :category, "カテゴリー" %>
-					          	<%= f.text_field :category_ent_or_category_or_category_detail_or_category_2_or_category_detail_2_cont, style:"width: 95%; height:32px; font-size:16px;"  %>
-					        </div>
-					        <div>
-					          	<%= f.label :category, "その他キーワード", style:"margin-top:6px;" %>
-					          	<%= f.text_field :company_name_or_ad_name_or_ad_show_or_key_word_cont , style:"width: 95%; height:32px; font-size:16px;" %>
+		                  <label class="se_label">
+		                    <div>
+		                      <%= f.label :category, "カテゴリー", style:"font-size:15px;" %>
+		                      <%= f.text_field :category_ent_or_category_detail_or_category_detail_2_cont, style:"width: 95%; height:32px; font-size:16px;"  %>
+		                  	</div>
+		                  	<div>
+		                      <%= f.label :category, "その他キーワード", style:"margin-top:6px;font-size:15px;" %>
+		                      <%= f.text_field :company_name_or_ad_name_or_ad_show_or_key_word_cont , style:"width: 95%; height:32px; font-size:16px;" %>
+              				</div><br>
+							<div>
+								<%=f.label :category,"カテゴリーで絞り込み検索", style:"font-size:15px;"  %>
+								<%= f.select :category_or_category_2_cont, Product::CATEGORY_LIST, { prompt: "選択してください"}, value: "" , style:"width: 95%; height:32px; font-size:16px;"%>
 							</div>
-
 
 				          	<input id="submit_button" type="submit" class="btn btn-primary" name="submit" value="検　索" style="margin-bottom: 2px;background-color: mediumblue; margin-top: 10px;">
 				      	  </label>
 
-	    				<% end %>
+
+                 		 <% end %>
+
 	    			</div>
 
-	    			<div style="padding-top: 9px;background-color: black;"></div>
+	    			<div style="background-color: lightblue;">
+	    				<img src="/assets/kensaku.jpg" alt="Kensaku" style="width:85%;margin-left: 8%;padding-bottom: 17%;padding-top: 5%;">
+	    			</div>
 
 	    		</div>
 			</div>
