@@ -1,0 +1,69 @@
+<table>
+  <%= form_for :products, {:method => "get"} do |f| %>
+    <tr>
+      <td>ジャンルで絞り込み：</td>
+      <td>
+        <% Product.all.each do |genre| %>
+          <label>
+            <%= f.check_box :category,{:name => "conditions[category][]"}, 
+              genre.to_s %>
+            <%= genre.category %>
+            &nbsp;
+            &nbsp;
+          </label>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.submit "絞り込み" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+    @conditions = OpenStruct.new(params[:conditions])
+
+
+
+
+
+
+
+<%= search_form_for @u, url: product_search_path do |f| %>
+
+                  <label class="se_label">
+                    <div>
+                      <%= f.label :category, "カテゴリー" %>
+                      <%= f.text_field :category_ent_or_category_or_category_detail_or_category_2_or_category_detail_2_cont, style:"width: 95%; height:32px; font-size:16px;"  %>
+                  </div>
+                  <div>
+                      <%= f.label :category, "その他キーワード", style:"margin-top:6px;" %>
+                      <%= f.text_field :company_name_or_ad_name_or_ad_show_or_key_word_cont , style:"width: 95%; height:32px; font-size:16px;" %>
+              </div>
+<%=f.label :category,"カテゴリーで絞り込み検索"  %>
+<%= f.check_box :category, {:checked=>true}, true, false %>
+<%= f.check_box 'category' %><%= f.label 'category', 'ショッピング' %>
+
+
+
+
+                  <% end %>
+
+
+
+
+<%=f.label :category,"カテゴリーで絞り込み検索"  %>
+<%= Product::CATEGORY_LIST.each do |list| %>
+<%= f.check_box :category, value: list[0] %>
+<% end %>
+
+
+
+
+<%= f.check_box :category, {:checked=>true}, true, false %>
+<%= f.check_box 'category' %><%= f.label 'category', 'ショッピング' %>
+<%= f.select :category_or_category_2_cont, Product::CATEGORY_LIST_3, { prompt: "選択してください"}, value: "" %>
+
+
+

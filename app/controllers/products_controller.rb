@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   def search
     @u = Product.search(params[:q])
+    # @products= Product.where(:category => params[:category])
     @results = @u.result(distinct: true).page(params[:page]).per(10).order("created_at DESC")
     render :index
   end
