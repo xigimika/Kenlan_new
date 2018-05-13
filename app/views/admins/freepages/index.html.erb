@@ -1,0 +1,67 @@
+<% if admin_signed_in? %>
+
+
+<div class="fre_top">
+	<h3 class="free_new">
+		<%= link_to "新規投稿へ", new_freepage_path %>
+	</h3>
+</div>
+<hr class="fr_hr">
+
+<!-- showページに飛ぶURL ／　edit ／　削除ボタン　を作成する -->
+
+
+<h1 style="margin:0px 0px 15px 0px;text-align: center;">投稿一覧</h1>
+
+<table class="table table-striped" style="width: 95%;margin-left: 2%;">
+	<thead>
+		<tr style="text-align: center;">
+			<td class="pc_block_1"></td>
+			<td class="free_tag_1"><h4>タイトル</h4></td>
+			<td class="free_tag_2"><h4>ジャンル</h4></td>
+			<td class="free_tag_3"><h4>更新日</h4></td>
+			<td></td>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @freepages.each do |t| %>
+		<tr style="text-align: center;">
+			<td class="pc_block_1"></td>
+			<td style="overflow-x: scroll;vertical-align:middle;">
+				<h4><%= t.title %></h4>
+			</td>
+			<td style="overflow-x: scroll;vertical-align:middle;">
+				<h4><%= t.genre %></h4>
+			</td>
+			<td style="vertical-align:middle;padding: 0px;">
+				<h4><%= t.created_at.strftime("%Y-%m-%d %H:%M:%S") %></h4>
+			</td>
+			<td class="free_click">
+				<%=link_to "SHOW", freepage_path(t.id) , class: "btn btn-primary" %>
+				&emsp;&emsp;
+				<%=link_to "編集", edit_freepage_path(t.id) , class: "btn btn-success", style: "color:ghostwhite;" %>
+				&emsp;&emsp;
+				<%=link_to "削除", freepage_path(t.id), method: :delete, data: {confirm: "削除する？"} , class: "btn btn-danger" %>
+			</td>
+		</tr>
+		<tr class="free_click_mini">
+			<td style="width: 39%;">
+				<%=link_to "SHOW", freepage_path(t.id) , class: "btn btn-primary" %>
+			</td>
+			<td style="width: 39%;">
+				<%=link_to "編集", edit_freepage_path(t.id) , class: "btn btn-success", style: "color:ghostwhite;" %>
+			</td>
+			<td style="padding-left: 56px;">
+				<%=link_to "削除", freepage_path(t.id), method: :delete, data: {confirm: "削除する？"} , class: "btn btn-danger" %>
+			</td>
+		</tr>
+		<% end %>
+
+	</tbody>
+</table>
+
+
+<%= paginate @freepages, class: "pagenate" %>
+
+<% end %>

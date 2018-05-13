@@ -1,0 +1,139 @@
+<div class="free_show_1">
+	<div class= "free_link">
+		<%= link_to "◀︎◀︎◀︎ 戻る",freepages_path,class: "free_link_te" %>
+	</div>
+
+	<div class="free_show_2">
+		<h2 style="text-align: center;">
+			<%= @freepages.title %>
+		</h2>
+
+		<p style="text-align:end;font-size: 15px;">
+			ジャンル：<%= @freepages.genre %>&emsp;
+		</p>
+
+		<div>
+			<%= attachment_image_tag @freepages, :image_free,  class: "image_gazou", style:"max-width: 250px; max-height: 300px; background-size: cover;margin-left: 37%;" %>
+		</div>
+
+		<h4 style="padding-left: 12px;">
+			<%= simple_format(@freepages.text) %>
+		</h4>
+		<hr>
+
+
+
+
+		<h3 style="text-align: left;">
+			<%= @freepages.midashi_1 %>
+		</h3>
+		<div class="center-block clearfix" style="padding-bottom: 20px;">
+			<div class="row">
+				<div class="col-xs-3" style="text-align: center;padding: 0px;width: 20%;">
+						<%= attachment_image_tag @freepages, :image_f2_1,  class: "image_gazou", style:"max-width: 150px; max-height: 200px; background-size: cover;" %>
+				</div>
+				<div class="col-xs-8" style="width: 77%;padding: 0px;">
+					<h4 style="padding-left: 12px;">
+						<%= simple_format(@freepages.stext_1) %>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<hr>
+
+
+		<h3 style="text-align: left;">
+			<%= @freepages.midashi_2 %>
+		</h3>
+		<div class="center-block clearfix" style="padding-bottom: 20px;">
+			<div class="row" style="margin-left: -4px;">
+				<div class="col-xs-8" style="width: 77%;padding: 0px 0px 0px 12px;">
+					<h4 style="padding-left: 12px;">
+						<%= simple_format(@freepages.stext_2) %>
+					</h4>
+				</div>
+				<div class="col-xs-3" style="text-align: center; padding: 0px;width: 20%;">
+				<%= attachment_image_tag @freepages, :image_f2_2,  class: "image_gazou", style:"max-width: 150px; max-height: 200px; background-size: cover;" %>
+				</div>
+			</div>
+		</div>
+		<hr>
+
+
+		<h3 style="text-align: left;">
+			<%= @freepages.midashi_3 %>
+		</h3>
+		<div class="center-block clearfix" style="padding-bottom: 20px;">
+			<div class="row">
+				<div class="col-xs-3" style="text-align: center;padding: 0px;width: 20%;">
+						<%= attachment_image_tag @freepages, :image_f2_3,  class: "image_gazou", style:"max-width: 150px; max-height: 200px; background-size: cover;" %>
+				</div>
+				<div class="col-xs-8" style="width: 77%;padding: 0px;">
+					<h4 style="padding-left: 12px;">
+						<%= simple_format(@freepages.stext_3) %>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<hr>
+
+
+		<h3 style="text-align: left;">
+			<%= @freepages.midashi_4 %>
+		</h3>
+		<div class="center-block clearfix" style="padding-bottom: 20px;">
+			<div class="row" style="margin-left: -4px;">
+				<div class="col-xs-8" style="width: 77%;padding: 0px 0px 0px 12px;">
+					<h4 style="padding-left: 12px;">
+						<%= simple_format(@freepages.stext_4) %>
+					</h4>
+				</div>
+				<div class="col-xs-3" style="text-align: center; padding: 0px;width: 20%;">
+				<%= attachment_image_tag @freepages, :image_f2_4,  class: "image_gazou", style:"max-width: 150px; max-height: 200px; background-size: cover;" %>
+				</div>
+			</div>
+		</div>
+		<hr>
+
+
+		<h3 style="text-align: left;">
+			<%= @freepages.midashi_5 %>
+		</h3>
+		<div class="center-block clearfix" style="padding-bottom: 20px;">
+			<div class="row">
+				<div class="col-xs-3" style="text-align: center;padding: 0px;width: 20%;">
+						<%= attachment_image_tag @freepages, :image_f2_5,  class: "image_gazou", style:"max-width: 150px; max-height: 200px; background-size: cover;" %>
+				</div>
+				<div class="col-xs-8" style="width: 77%;padding: 0px;">
+					<h4 style="padding-left: 12px;">
+						<%= simple_format(@freepages.stext_5) %>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<hr>
+
+
+		<h3 style="text-align: left;">
+			<%= @freepages.midashi_6 %>
+		</h3>
+		<div class="center-block clearfix" style="padding-bottom: 45px;">
+			<div class="row" style="margin-left: -4px;">
+				<div class="col-xs-8" style="width: 77%;padding: 0px 0px 0px 12px;">
+					<h4 style="padding-left: 12px;">
+						<%= simple_format(@freepages.stext_6) %>
+					</h4>
+				</div>
+				<div class="col-xs-3" style="text-align: center; padding: 0px;width: 20%;">
+				<%= attachment_image_tag @freepages, :image_f2_6,  class: "image_gazou", style:"max-width: 150px; max-height: 200px; background-size: cover;" %>
+				</div>
+			</div>
+		</div>
+ 		<p id="pageTop" style="margin-left: 2%; font-size: 20px;"><a href="#" style="color: mediumblue;">⬆︎ページの一番上へ</a></p>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+

@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<table style="width: 65%;margin-left: 15%;">
+<table class="email_table">
 	<h3 style="text-align:center;">Webサイトからお問い合わせがありました。</h3>
 
 	<tr>
@@ -11,58 +11,58 @@
 	</tr>
 
 	<tr>
-		<th class="email_th" style="padding-top: 15px;">名前：&emsp;&emsp;</th>
+		<th class="email_th" style="padding-top: 15px;">名前：&emsp;</th>
 		<td class="email_td" style="padding-top: 15px;"><%= @inquiry.name %></td>
 	</tr>
 
 	<tr>
-		<th class="email_th">名前（ふりがな）：&emsp;&emsp;</th>
+		<th class="email_th">名前（ふりがな）：&emsp;</th>
 		<td class="email_td"><%= @inquiry.name_kana %></td>
 	</tr>
 
 	<tr>
-		<th class="email_th">性別：&emsp;&emsp;</th>
+		<th class="email_th">性別：&emsp;</th>
 		<td class="email_td"><%= @inquiry.sex %></td>
 	</tr>
 
 
 	<tr>
-		<th class="email_th">法人名：&emsp;&emsp;</th>
+		<th class="email_th">法人名：&emsp;</th>
 		<td class="email_td"><%= @inquiry.company_name %></td>
 	</tr>
 
 
 	<tr>
-		<th class="email_th">役職：&emsp;&emsp;</th>
+		<th class="email_th">役職：&emsp;</th>
 		<td class="email_td"><%= @inquiry.position %></td>
 	</tr>
 
 
 	<tr>
-		<th class="email_th">住所：&emsp;&emsp;</th>
+		<th class="email_th">住所：&emsp;</th>
 		<td class="email_td"><%= @inquiry.address %></td>
 	</tr>
 
 
 	<tr>
-		<th class="email_th">電話番号：&emsp;&emsp;</th>
+		<th class="email_th">電話番号：&emsp;</th>
 		<td class="email_td"><%= @inquiry.tell %></td>
 	</tr>
 
 
 	<tr>
-		<th class="email_th">メールアドレス：&emsp;&emsp;</th>
+		<th class="email_th">メールアドレス：&emsp;</th>
 		<td class="email_td"><%= @inquiry.email %></td>
 	</tr>
 
 
 	<tr>
-		<th class="email_th">お問い合わせ内容(1)：&emsp;&emsp;</th>
+		<th class="email_th">お問い合わせ内容(1)：&emsp;</th>
 		<td class="email_td"><%= @inquiry.naiyou %></td>
 	</tr>
 
 	<tr>
-		<th class="email_th">お問い合わせ内容(2)：&emsp;&emsp;</th>
+		<th class="email_th">お問い合わせ内容(2)：&emsp;</th>
 		<td class="email_td" style="line-height: 26px;"><%= @inquiry.text %></td>
 	</tr>
 

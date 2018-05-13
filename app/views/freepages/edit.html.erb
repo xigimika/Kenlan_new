@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <title>檢覽-KENLAN-</title>
+  <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  </head>
+
+
+<% if admin_signed_in? %>
+	<h1 style="text-align: center;">編集</h1>
+
+	<%= form_for @freepages do |t| %>
+
+	  <% if @freepages.errors.any? %>
+	  	<div id="error_explanation" >
+			<h3><%= @freepage.errors.count %>件のエラーが発生しました。</h3>
+			<ul>
+				<% @freepage.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	  <% end %>
+
+	  <div style="text-align: center;">
+		<h3>画像投稿</h3>
+			<%= t.attachment_field :image_free, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<hr>
+
+		<h3>ジャンル</h3>
+			<%= t.text_field :genre,:placeholder => "ジャンル", class: "new_field" %>
+		<hr>
+
+		<h3>タイトル</h3>
+			<%= t.text_field :title,:placeholder => "タイトル", class: "new_field" %>
+		<hr>
+
+		<h3>本文</h3>
+			<%= t.text_area :text,:placeholder => "テキスト",class: "new_field_text" %>
+		<hr>
+		<hr>
+
+
+		<h3>本文中の画像 ⑴</h3>
+			<%= t.attachment_field :image_f2_1, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<hr>
+
+		<h3>見出し ⑴</h3>
+			<%= t.text_field :midashi_1,:placeholder => "タイトル", class: "new_field" %>
+		<hr>
+
+		<h3>内容 ⑴</h3>
+			<%= t.text_area :stext_1,:placeholder => "テキスト",class: "new_field_text" %>
+		<hr>
+
+		<h3>本文中の画像 ⑵</h3>
+			<%= t.attachment_field :image_f2_2, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<hr>
+
+		<h3>見出し ⑵</h3>
+			<%= t.text_field :midashi_2,:placeholder => "タイトル", class: "new_field" %>
+		<hr>
+
+		<h3>内容 ⑵</h3>
+			<%= t.text_area :stext_2,:placeholder => "テキスト",class: "new_field_text" %>
+		<hr>
+
+		<h3>本文中の画像 ⑶</h3>
+			<%= t.attachment_field :image_f2_3, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<hr>
+
+		<h3>見出し ⑶</h3>
+			<%= t.text_field :midashi_3,:placeholder => "タイトル", class: "new_field" %>
+		<hr>
+
+		<h3>内容 ⑶</h3>
+			<%= t.text_area :stext_3,:placeholder => "テキスト",class: "new_field_text" %>
+		<hr>
+
+		<h3>本文中の画像 ⑷</h3>
+			<%= t.attachment_field :image_f2_4, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<hr>
+
+		<h3>見出し ⑷</h3>
+			<%= t.text_field :midashi_4,:placeholder => "タイトル", class: "new_field" %>
+		<hr>
+
+		<h3>内容 ⑷</h3>
+			<%= t.text_area :stext_4,:placeholder => "テキスト",class: "new_field_text" %>
+		<hr>
+
+		<h3>本文中の画像 ⑸</h3>
+			<%= t.attachment_field :image_f2_5, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<hr>
+
+		<h3>見出し ⑸</h3>
+			<%= t.text_field :midashi_5,:placeholder => "タイトル", class: "new_field" %>
+		<hr>
+
+		<h3>内容 ⑸</h3>
+			<%= t.text_area :stext_5,:placeholder => "テキスト",class: "new_field_text" %>
+		<hr>
+
+		<h3>本文中の画像 ⑹</h3>
+			<%= t.attachment_field :image_f2_6, style:" display: initial; font-size: 17px; height: 34px; padding-top: 10px;"%>
+		<hr>
+
+		<h3>見出し ⑹</h3>
+			<%= t.text_field :midashi_6,:placeholder => "タイトル", class: "new_field" %>
+		<hr>
+
+		<h3>内容 ⑹</h3>
+			<%= t.text_area :stext_6,:placeholder => "テキスト",class: "new_field_text" %>
+		<hr>
+
+
+
+		<%= t.submit "更　新" , data: {confirm: "情報を更新しますか？"} ,class: "btn btn-primary", style: "padding: 8px 72px; font-size:20px;" %>
+	  </div>
+	<% end %>
+
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</html>

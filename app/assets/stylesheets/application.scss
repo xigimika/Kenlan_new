@@ -17,13 +17,61 @@
 	@import "bootstrap-sprockets";
     @import "bootstrap";
 
+.slicknav_menu {
+    display:none;/*PC時は非表示*/
+}
+
+
+.ap_html{}
+
+.ap_head{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    bottom: 90.5%;
+}
+.ap_head_pc{
+    display: block;
+}
+
+.ap_head_mini{
+    display: none;
+}
+
+.foot_ap{
+    display: block;
+}
+.ap_foot{
+        display: none;
+    }
+
 .container{
 	width: 100%;
 	background-color: black;
-	height: 50px;
+	height: 88%;
     line-height: 50px;
     padding-right: 30px;
 }
+
+.container_free{
+    width: 100%;
+    background-color: aquamarine;
+    height: 50px;
+    line-height: 50px;
+    padding-right: 30px;
+}
+
+.sticky_f_f{
+    position: fixed;
+    z-index: auto;
+    background-color: aquamarine;
+    text-align: center;
+    bottom: -10px;
+    width: 100%;
+}
+
 
 .font{
 	font-size: 25px;
@@ -47,15 +95,16 @@
 }
 
 
-.aaaaaaaaaa{
-    background-image: url(7628994i.jpeg)
-}
+
+
+/* admin-新規投稿ページ */
+
 
 .main-visual_ad{
-    background-image: url(5142.jpg);
+    background-image: url(IMG_6880.jpg);
     max-width: 100%;
     max-height: 100%;
-    background-size: 100% 98%;
+    background-size: 100% 100%;
 }
 
 .main-visual-content_ad{
@@ -69,13 +118,27 @@
 }
 
 .main-visual-text_ad{
-    background-color: midnightblue;
-    width: 58%;
-    margin-left: 1%;
-    padding: 14px 0px;
+    display: block;
+    width: 83%;
+    margin-left: 10%;
+    padding: 23% 0px;
+}
+.main-visual-text_ad_mini{
+    display: none;
 }
 
+.ad_shinki_pc{
+    display: block;
+}
+
+.ad_shinki_mini{
+    display: none;
+}
+
+/**/
+
 .index_title{
+    display: block;
     text-align: center;
     text-decoration: underline;
     text-shadow: 16px -4px 6px;
@@ -84,9 +147,258 @@
     font-weight: bolder;
     font-style: italic;
     height: 44px;
-    margin: -7px;
+    margin: -3.2% -6% 0% 0%;
     background-color: black;
     font-size: 31px;
     letter-spacing: 1mm;
 }
+
+.index_title_tp{
+    display: none;
+}
+
+.index_title_mini{
+    display: none;
+}
+
+.ap_foot_nav{
+    display: block;
+}
+
+
+                            
+
+@media screen and (max-width:1024px)and(min-width: 768px) {}
+
+.index_title_tp{
+    display: block;
+    text-align: right;
+    text-decoration: underline;
+    text-shadow: 16px -4px 6px;
+    font-family: cursive;
+    word-spacing: 8px;
+    font-weight: bolder;
+    font-style: italic;
+    height: 44px;
+    margin: -3.2% -6% 0% 0%;
+    background-color: black;
+    font-size: 31px;
+    letter-spacing: 1mm;
+}
+
+.index_title{
+    display: none;
+}
+
+
+
+
+                            
+
+@media (max-width: 767px){
+    .slicknav_menu {
+        display:block;/*モバイル時は表示*/
+    }
+
+    .header,.main,.footer {
+        width: 100%;
+    }
+
+    .ap_html{
+        width: 100%;
+        height: 100%;
+    }
+
+
+/* hesder */
+    .ap_head{
+        /* position: fixed;*/
+        top: 0px;
+        left: auto;
+        right: auto;
+        z-index: 1;
+        background-color: initial;
+        height: 8px;
+    }
+    .ap_head_pc{
+        display: none;
+    }
+
+    .ap_head_mini{
+        display: block;
+    }
+
+    .container{
+        width: 100%;
+        background-color: black;
+        height: 45px;
+        /* line-height: 50px;*/
+        padding-right: 20px;
+        position: fixed;
+        z-index: 1;
+    }
+
+    .index_title{
+        display: none;
+    }
+
+    .index_title_mini{
+        display: block;
+        text-align: center;
+        padding-top: 3%;
+        text-decoration: underline;
+        text-shadow: 10px -4px 6px;
+        font-family: cursive;
+        word-spacing: 2px;
+        font-weight: bolder;
+        font-style: italic;
+    }
+    .nav navbar-nav navbar-center{
+        width: 100%;
+        margin-top: -165px;
+    }
+
+    .font_mini{
+        font-size: 14px;
+        font-family: cursive;
+        font-style: italic;
+    }
+
+    header nav {
+        webkit-transition:.5s ease-in-out; /*transitionで動きを*/
+        -moz-transition:.5s ease-in-out;
+        transition:.5s ease-in-out;
+    }
+
+    #humberger {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      display: block;
+    }
+    #humberger div {
+ /*     position: absolute;*/
+    /*  border-radius: 2px;*/
+      display: inline-block;
+      box-sizing: border-box;
+    }
+
+    .humberger_top{
+        height: 81%;
+        border: 2px solid white;
+        width: 48px;
+        margin-top: 3px;
+        margin-left: 15%;
+        background-color: darkgreen;
+        border-radius: 4px;
+    }
+
+    .humber{
+        display: none;
+        width: 44%;
+        margin-left: 57%;
+        line-height: 28px;
+    }
+
+    .humber_tag{
+        background-color: black;
+        padding: 1px 0px 0px 0px;
+        font-size: 20px;
+        text-align: center;
+        list-style: none;
+    }
+
+    .humber-list{
+    }
+
+    .openNav #humberger span:nth-child(1) {
+        top: 11px;
+        -webkit-transform:rotate(-45deg);
+        -moz-transform:rotate(-45deg);
+        transform:rotate(-45deg)
+    }
+　/*2番目と3番目のspanを45度に*/
+    .openNav #humberger span:nth-child(2),
+    .openNav #humberger span:nth-child(3) {
+        top: 11px;
+        -webkit-transform:rotate(45deg);
+        -moz-transform:rotate(45deg);
+        transform:rotate(45deg)
+    }
+
+
+
+
+
+/* footer */
+    .foot_ap{
+        display: none;
+    }
+
+    .ap_foot{
+        display: block;
+    }
+
+    .sticky_f{
+        position: fixed;
+        z-index: auto;
+        background-color: black;
+        text-align: center;
+        bottom: 0px;
+        /*width: 100%;*/
+        height: 70px;
+        padding-top: 8px;
+    }
+
+/* admin_新規投稿ページ */
+    .main-visual_ad{
+        background-image: url(unnamed.jpg);
+        max-width: 100%;
+        max-height: 100%;
+        background-size: 100% 100%;
+        padding-bottom: 50px;
+    }
+
+    .main-visual-content_ad{
+        display: block;
+        height: 717px;
+        /*background-color: rgba( 0, 0, 0, 0.5);*/
+        margin: -3% 5% 0% 5%;
+        padding-top: 5%;
+        text-align: center;
+        color: darkblue;
+        font-size: 40px;
+    }
+
+    .main-visual-text_ad{
+        display: none;
+    }
+
+    .main-visual-text_ad_mini{
+        display: block;
+        background-color: inherit;
+        padding: 96px 0px;
+        font-size: 40px;
+    }
+
+    .ad_shinki_pc{
+        display: none;
+    }
+
+    .ad_shinki_mini{
+        display: block;
+        text-align: left;
+        margin-left: 50px;
+        padding-top: 46%;
+    }
+
+
+
+
+}
+
+
+
+
+
 

@@ -1,7 +1,15 @@
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<p class="show_mini_top"></p>
+
 <div style="margin-left: 2%;margin-top: 7%;">
   <%= form_for@inquiry, :url => inquiry_confirm_path do |f| %>
     <div class="page-header">
-      <h1>お問い合わせ</h1>
+      <h1 class="info_index_mini">お問い合わせ</h1>
     </div>
 
     <% if @inquiry.errors.any? %>
@@ -15,14 +23,14 @@
       </div>
     <% end %>
 
-    <table class="table">
+    <table class="table info_table">
       <tr>
         <th>名前<span class="text-danger">&emsp;＊必須</span></th>
-        <td><%= f.text_field :name %></td>
+        <td><%= f.text_field :name ,style: "border:1px solid gray;" %></td>
       </tr>
       <tr>
         <th>名前（かな）<span class="text-danger">&emsp;＊必須</span></th>
-        <td><%= f.text_field :name_kana %></td>
+        <td><%= f.text_field :name_kana ,style: "border:1px solid gray;" %></td>
       </tr>
       <tr>
         <th>性別<span class="text-danger">&emsp;＊必須</span></th>
@@ -31,32 +39,34 @@
       </tr>
       <tr>
         <th>法人名<span class="text-danger">&emsp;＊必須</span></th>
-        <td><%= f.text_field :company_name %></td>
+        <td><%= f.text_field :company_name ,style: "border:1px solid gray;" %></td>
       </tr>
       <tr>
         <th>役職</th>
-        <td><%= f.text_field :position %></td>
+        <td><%= f.text_field :position ,style: "border:1px solid gray;" %></td>
       </tr>
       <tr>
         <th>住所<span class="text-danger">&emsp;＊必須</span></th>
-        <td><%= f.text_field :address %></td>
+        <td><%= f.text_field :address ,style: "border:1px solid gray;" %></td>
       </tr>
       <tr>
         <th>電話番号<span class="text-danger">&emsp;＊必須</span></th>
-        <td><%= f.text_field :tell %></td>
+        <td><%= f.text_field :tell ,style: "border:1px solid gray;" %></td>
       </tr>
       <tr>
         <th>メールアドレス<span class="text-danger">&emsp;＊必須</span></th>
-        <td><%= f.text_field :email %></td>
+        <td><%= f.text_field :email ,style: "border:1px solid gray;" %></td>
       </tr>
       <tr>
         <th>お問い合わせ内容<span class="text-danger">&emsp;＊必須</span></th>
+      </tr>
+      <tr>
         <td><label><%= f.radio_button :naiyou, "新規登録" %>新規登録</label></td>
         <td><label><%= f.radio_button :naiyou, "サイトに関して" %>サイトに関して</label></td>
         <td><label><%= f.radio_button :naiyou, "その他のお問い合わせ" %>その他のお問い合わせ</label></td>
       </tr>
       <tr>
-        <th colspan="4"><%= f.text_area :text, style: "margin: 0px; width: 547px;height: 175px" %></th>
+        <th colspan="4"><%= f.text_area :text, style: "margin: 0px; width: 547px;height: 175px;border:1px solid gray;" %></th>
       </tr>
     </table>
     <%= f.submit '確認画面へ', class: 'btn btn-primary',:style => "padding: 8px 72px; font-size:20px; margin-left:54%;" %>

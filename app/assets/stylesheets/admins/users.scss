@@ -18,17 +18,28 @@
 .ad_us_td{
 	border-right: groove;
 	font-size: 18px;
+	width: 19%;
+}
+
+.ad_us_td_m{
+	border-right: groove;
+	font-size: 18px;
 	width: 14%;
 }
 
 .ad_us_td_p{
-	width: 28%;
+	display: block;
+	width: 100%;
+}
+
+.ad_us_td_p_mini{
+	display: none;
 }
 
 
 /* show */
 
-.table_t{
+.table_t_a{
 	width: 70%;
 	margin-left: 14%;
 	margin-top: 2%;
@@ -43,6 +54,13 @@
 
 .user_show_td{
 	font-size: 17px;
+}
+
+.user_show_link{
+	margin-left: 0%;
+	text-align: center;
+	margin-top: 2%;
+
 }
 
 
@@ -72,6 +90,90 @@
 .user_edit_td{
 	font-size: 17px;
 }
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1024px)and(min-width: 768px) {}
+
+
+
+
+@media (max-width: 767px){
+/* index */
+	.ad_us_td_p{
+		display: none;
+	}
+	.ad_us_td_p_mini{
+		display: block;
+		padding-top: 8px;
+	}
+
+	.ad_us_td{
+		border-right: groove;
+		font-size: 18px;
+		width: 19%;
+	}
+
+	.ad_us_td_m{
+		border-right: groove;
+		font-size: 18px;
+		width: 22%;
+	}
+
+
+/* show */
+	.table_t_a{
+		width: 85%;
+		margin-left: 8%;
+		margin-top: 2%;
+	}
+
+	.user_show_th{
+		background-color: papayawhip;
+		width: 30%;
+	    font-size: 18px;
+	    text-align: right;
+	}
+
+	.user_show_td{
+		font-size: 17px;
+		width: 30%;
+	}
+
+	.user_show_link{
+		margin-left: 0px;
+		text-align: center;
+		margin-top: 5%;
+	}
+
+
+/* edit */
+	.table_ed{
+		width: 90%;
+		margin-left: 5%;
+		margin-top: 4%;
+	}
+
+	.user_edit_th{
+		background-color: chartreuse;
+		width: 28%;
+	    font-size: 18px;
+	    text-align: right;
+	}
+
+
+}
+
+
+
+
+
 
 
 

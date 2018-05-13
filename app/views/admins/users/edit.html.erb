@@ -1,5 +1,7 @@
 <% if admin_signed_in? %>
 
+<p class="show_mini_top" style="padding-bottom: 5%;"></p>
+
 <h2 style="text-align:center;">管理者用　ユーザー編集</h2>
 
 
@@ -92,8 +94,12 @@
 
 <% end %>
 
-	<%= link_to "TOPへ",admins_homes_path , class: "btn btn-warning", style: "padding: 8px 50px; font-size:20px; margin-top:2%; margin-left:29%;"  %>
-	<%= link_to "user一覧へ戻る", admins_users_path, data: {confirm: "編集を中止する？"} ,  class: "btn btn-success", style: "padding: 8px 50px; font-size:20px; margin-top:2%; margin-left:12%;" %>
+<div class="user_show_link">
+	<%= link_to "TOPへ",admins_homes_path , class: "btn btn-warning", style: "padding: 8px 50px; font-size:20px;"  %>
+</div>
+<div class="user_show_link">
+	<%= link_to "user一覧へ戻る", admins_users_path, data: {confirm: "編集を中止する？"} ,  class: "btn btn-success", style: "padding: 8px 50px; font-size:20px;" %>
+</div>
 
 <br>
 <br>

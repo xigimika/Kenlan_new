@@ -12,7 +12,7 @@ class Admin < ApplicationRecord
 	validates :id_kari
   end
 
-
+has_many :freepages
 
 private
 

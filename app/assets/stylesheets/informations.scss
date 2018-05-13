@@ -82,4 +82,69 @@
 }
 
 
+                              
+
+@media screen and (max-width:1024px)and(min-width: 768px) {}
+
+
+
+
+
+                             
+
+@media (max-width: 767px){
+
+/* index view */
+  .info_index{
+      border-bottom: 2px groove #95937B;
+      border-left: 2px groove #95937B;
+      border-right: 2px groove #95937B;
+      border-top: 2px groove #95937B;
+      box-shadow: -3px 2px 15px;
+      margin: -3px 11px 5% 12px;
+  }
+
+  .note_text{
+      font-size: 14px;
+  }
+
+  .talkbubble{
+      width: 68%;
+      height: 151px;
+      background: peachpuff;
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 33px;
+      margin-left: 16%;
+      padding-top: 5px;
+      margin-top: 37%;
+  }
+
+  .talkbubble h1:before {
+      content: "";
+      position: absolute;
+      right: 56%;
+      bottom: 110px;
+      width: 0px;
+      height: 0px;
+      border-top: 104px solid transparent;
+      border-right: 90px solid peachpuff;
+      border-bottom: 28px solid transparent;
+  }
+
+  .info-visual_ad{
+      margin-top: -3%;
+  }
+
+
+
+
+}
+
+
+
+
+
+
 

@@ -1,0 +1,2 @@
+module Admins::FreepagesHelper
+end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-
+  namespace :admins do
+    get 'freepages/index'
+  end
 
   namespace :admins do
     get 'emails/index'
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
    namespace :admins do
         resources :users
         resources :products
+        resources :freepages
         resources :emails,only: [:index,:show]
         resources :homes,only: [:index]
     end
@@ -35,6 +38,7 @@ Rails.application.routes.draw do
 	resources :products
 	resources :informations,only: [:index,:new,:note]
 	resources :inquiries
+  resources :freepages
 
 
 get '/top' => 'products#top'
@@ -51,6 +55,8 @@ get 'search_products_admins' => 'admins/products#search' ,as: 'admins_product_se
 # get 'admins/homes/mail' => 'admins/homes#index_mail'
 # get 'admins/homes/mail/show' => 'admins/homes/index_mail#show'
 # get 'inquiry/received_email' => 'inquirys#email'
+
+get 'free/top' => 'freepages#top'
 
 end
 

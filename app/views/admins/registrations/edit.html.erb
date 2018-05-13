@@ -1,3 +1,12 @@
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<p class="show_mini_top"></p>
+
+
 <h2 style="text-align: center;margin-top: 7%;"><%= resource_name.to_s.humanize %>登録編集</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -69,39 +78,45 @@
       密码：&emsp;
     </th>
     <td class="a_edit_td">
-        <%= f.password_field :password, autocomplete: "off", class: "a_edit_box" %>
-      </td>
-      <th colspan="2" class="a_edit_th_t">
-          <% if @minimum_password_length %>
-          <em style="font-size: 15px;">&emsp;＊请设定&emsp;<%= @minimum_password_length %> 字以上</em>
-          (不从设置密码为请匆填空)
-        </th>
-          <% end %>
-    </tr>
+      <%= f.password_field :password, autocomplete: "off", class: "a_edit_box" %>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="2" class="a_edit_th_t">
+        <% if @minimum_password_length %>
+        <em style="font-size: 15px;">&emsp;＊请设定&emsp;<%= @minimum_password_length %> 字以上</em>
+        (不从设置密码为请匆填空)
+      </th>
+        <% end %>
+  </tr>
 
-   <tr>
-        <th class="a_edit_ad_th">
-          密码：&emsp;
-        </th>
-        <td class="a_edit_td">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "a_edit_box" %>
-        </td>
-        <th colspan="2" class="a_edit_th_t">
-          &emsp;<%= f.label :在输入一边新密码 %>
-        </th>
-    </tr>
+  <tr>
+    <th class="a_edit_ad_th">
+      密码：&emsp;
+    </th>
+    <td class="a_edit_td">
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "a_edit_box" %>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="2" class="a_edit_th_t">
+      &emsp;<%= f.label :在输入一边新密码, style:"margin-bottom:0px;" %>
+    </th>
+  </tr>
 
-    <tr>
-        <th class="a_edit_ad_th">
-          现存密码：&emsp;
-        </th>
-        <td class="a_edit_td">
-          <%= f.password_field :current_password, autocomplete: "off", class: "a_edit_box" %>
-        </td>
-        <th colspan="2" class="a_edit_th_t">
-          &emsp;(为了更改需要填写现存的密码)
-        </th>
-    </tr>
+  <tr>
+    <th class="a_edit_ad_th">
+      现存密码：&emsp;
+    </th>
+    <td class="a_edit_td">
+      <%= f.password_field :current_password, autocomplete: "off", class: "a_edit_box" %>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="2" class="a_edit_th_t">
+      &emsp;(为了更改需要填写现存的密码)
+    </th>
+  </tr>
 
 </table>
 <br>
@@ -118,5 +133,5 @@
 </table>
       <% end %>
 
-<hr><hr><hr><hr><hr>
+<br><br><br><br><br>
 

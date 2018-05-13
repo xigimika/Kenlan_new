@@ -8,9 +8,10 @@
 		<tr class="ad_us_tr">
 			<td class="ad_us_td"><h4>会社名</h4></td>
 			<td class="ad_us_td"><h4>担当者</h4></td>
-			<td class="ad_us_td"><h4>メールアドレス</h4></td>
+			<td class="ad_us_td_m"><h4>メールアドレス</h4></td>
 			<td class="ad_us_td"><h4>電話番号</h4></td>
 			<td class="ad_us_td_p"><h4></h4></td>
+			<td class="ad_us_td_p_mini"><h4></h4></td>
 		</tr>
 	</thead>
 
@@ -18,9 +19,9 @@
 		<% @users.each do |t| %>
 
 		<tr class="ad_us_tr">
-			<td class="ad_us_td"><%= t.company_name %></td>
+			<td class="ad_us_td" style="overflow-x:scroll;"><%= t.company_name %></td>
 			<td class="ad_us_td"><%= t.pic_name %></td>
-			<td class="ad_us_td"><%= t.email %></td>
+			<td class="ad_us_td" style="overflow-x:scroll;"><%= t.email %></td>
 			<td class="ad_us_td"><%= t.tell %></td>
 			<td class="ad_us_td_p">
 				<%= link_to "詳細画面へ",admins_user_path(t.id) , class: "btn btn-primary"  %>
@@ -29,6 +30,13 @@
 				&emsp;&emsp;
 				<%= link_to "退会", admins_users_path(t.id), data: { confirm: "退会させますか？" },:method => :delete , class: "btn btn-danger" %>
 			</td>
+
+			<td class="ad_us_td_p_mini">
+				<p><%= link_to "詳細画面へ",admins_user_path(t.id) , class: "btn btn-primary"  %></p>
+				<p><%= link_to "編集画面へ",edit_admins_user_path(t.id) , class: "btn btn-primary"  %></p>
+				<p><%= link_to "退会", admins_users_path(t.id), data: { confirm: "退会させますか？" },:method => :delete , class: "btn btn-danger" %></p>
+			</td>
+
 		</tr>
 
 		<% end %>
