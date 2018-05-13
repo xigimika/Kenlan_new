@@ -37,6 +37,36 @@
 
 </table>
 
+                                   
+
+<table class="ad_mail_tab_mini">
+	<thead>
+		<tr class="ad_mail_tr">
+			<td class="ad_mail_td" style="width:33%; "><h4>法人名</h4></td>
+			<td class="ad_mail_td" style="width:27%; "><h4>お問い合わせ内容</h4></td>
+			<td class="ad_mail_td"><h4>受信日時</h4></td>
+			<td class="ad_mail_td" style="width:19%; "><h4></h4></td>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @inquiries.each do |f| %>
+
+		<tr class="ad_mail_tr">
+			<td class="ad_mail_td"><%= f.company_name %></td>
+			<td class="ad_mail_td" style="line-height: 25px;"><%= f.naiyou %></td>
+			<td class="ad_mail_td" style="line-height: 25px;"><%= f.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+			<td class="ad_mail_td">
+				<%= link_to "本文を見る",admins_email_path(f.id),class: "btn btn-primary", style:"margin-top:4px;" %>
+				<%=link_to "削除", inquiry_path(f.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger", style:"margin:2px 0px" %></td>
+		</tr>
+		<% end %>
+
+		<tr><th><%= paginate @inquiries, class: "pagenate" %></th></tr>
+	</tbody>
+
+</table>
+
 <br>
 <br>
 <br>

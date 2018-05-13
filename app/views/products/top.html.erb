@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
   <head>
     <title>檢覽-KENLAN-</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <body>
+<p class="show_mini_top"></p>
+  <body class="ap_html">
   	<div class="main-visual">
 	  	<div class ="main-visual-content" style="text-align: center;">
-		  	<h1><%= link_to "檢覽-KENLAN-", root_path, style:"color:white;" %></h1>
-			<h4 class="main_text">製作者による<br>
-				製作者の趣味を満たすための<br>
-				ADサイト</h4>
+		  	<h1 class="main_text_pc"><%= link_to "檢覽-KENLAN-", root_path, style:"color:white;" %></h1>
+
+		  	<h1 class="main_text_title"><%= link_to "檢覽-KENLAN-", root_path, style:"color:maroon;" %></h1>
+
+			<h4 class="main_text">バナーを見る事が好きな人のための<br>バナー専門の閲覧・検索サイトです<br><br>
+				<%= link_to "＊ 上記サイト名をクリックしてお入りください", free_top_path,class: "main_text_link" ,style:"color:white;" %>
+				<%= link_to "＊ 右記サイト名をクリックしてお入りください", free_top_path,class: "main_text_link_mini" ,style:"color:navy;" %>
+			</h4>
 		</div>
 	</div>
 
  
 
   </body>
+</html>

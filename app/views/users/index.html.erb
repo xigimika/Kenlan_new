@@ -1,10 +1,26 @@
-<h1 style="text-align: center;margin-top: 7%;">TOP</h1>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<p class="show_mini_top"></p>
+<h1 class="user_index_top">TOP</h1>
 <hr>
 
+<span class="user_date_edit_pc">
 <%= link_to "ユーザー情報の確認・編集はこちら", edit_user_registration_path, class: "btn btn-warning", style: "color:black;font-size: 20px; margin-left: 38%; padding: 23px 8px;" %>
+</span>
 
+                    
 
+<span class="user_date_edit_mini">
+<%= link_to "ユーザー情報の確認・編集はこちら", edit_user_registration_path, class: "btn btn-warning", style: "color:black;font-size: 16px; margin-left: 29%; padding: 12px 4px;" %>
+</span>
 
+                                 
+
+<span class="user_index_pc">
 <div class="center-block clearfix" style="padding: 15px;">
 	<div class="row">
 		<div class="col-xs-12">
@@ -60,6 +76,9 @@
 							<td>
 								<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success", style: "color:black;" %>
 							</td>
+							<td>
+								<%=link_to "詳細画面へ", product_path(t.id), class: "btn btn-warning", style: "color:black;" %>
+							</td>
 							<td><%=link_to "商品を削除する", user_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %></td>
 						</tr>
 					<% end %>
@@ -73,5 +92,105 @@
 		</div>
 	</div>
 </div>
+</span>
+                            
 
-<hr>
+<span class="user_index_mini">
+	<h2 class="ichiran" style="font-size: 25px;">商品情報
+		<%= link_to "新規登録", new_product_path, class: "btn btn-large btn-info", style: "color:maroon; padding: 8px 23px; font-size: 16px; margin-left: 60%;" %></h2>
+
+		<%= search_form_for @u, url: user_search_path do |f| %>
+			<p>
+	          <label style="margin-bottom: 0px; padding-top: 0px;margin-left: 10px;"><%= f.search_field :ad_name_or_company_name_cont,size:45 ,style:"width: 65%; height:30px;" %>
+	          <!-- <input id="submit_button" type="submit" class="" name="submit" value="検　索" style="margin-bottom: 4px;"> -->
+	          <%= submit_tag '検索', class: 'btn btn-primary' %>
+			  </label>
+	        </p>
+		<% end %>
+	<div class="center-block clearfix" style="">
+		<div class="row" style="margin: 0px;">
+			<table class="table table-hover">
+				<tbody>
+					<% if @results.presence %>
+						<% @results.each do |t| %>
+
+						<tr>
+							<td colspan="4" style="padding: 10px 0px 3px 10px;"><h4 style="margin: 0px auto;"><%= t.ad_name %></h4></td>
+						</tr>
+						<tr>
+							<td style="border: 0px;vertical-align: middle; width: 95px;">
+								<%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size" %>
+							</td>
+							<td style="border: 0px;vertical-align: middle;width: 100px;">
+								<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success", style: "color:black;" %>
+							</td>
+							<td style="border: 0px;vertical-align: middle;width: 100px;">
+								<%=link_to "詳細画面へ", product_path(t.id), class: "btn btn-warning", style: "color:black;" %>
+							</td>
+							<td style="border: 0px;vertical-align: middle;width: 100px;">
+								<%=link_to "商品を削除する", user_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" style="border: 0px;">
+								<h4 class="url_long"><%= t.url %></h4>
+								<hr style="margin: 9px 0px 0px;">
+							</td>
+						</tr>
+
+
+
+						<% end %>
+
+					<% elsif @products.blank? %>
+						<h2>&emsp;&emsp;＊検索結果はありません</h2>
+
+					<% else %>
+					<% @products.each do |t| %>
+
+						<tr>
+							<td colspan="4" style="padding: 10px 0px 3px 10px;"><h4 style="margin: 0px auto;"><%= t.ad_name %></h4></td>
+						</tr>
+						<tr>
+							<td style="border: 0px;vertical-align: middle; width: 95px;">
+								<%= attachment_image_tag t, :ad_image, fallback: "no-image.jpg", class: "image_size" %>
+							</td>
+							<td style="border: 0px;vertical-align: middle;width: 100px;">
+								<%=link_to "編集画面へ", edit_product_path(t.id) , class: "btn btn-success", style: "color:black;" %>
+							</td>
+							<td style="border: 0px;vertical-align: middle;width: 100px;">
+								<%=link_to "詳細画面へ", product_path(t.id), class: "btn btn-warning", style: "color:black;" %>
+							</td>
+							<td style="border: 0px;vertical-align: middle;width: 100px;">
+								<%=link_to "商品を削除する", user_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" style="border: 0px;">
+								<h4 class="url_long"><%= t.url %></h4>
+								<hr style="margin: 9px 0px 0px;">
+							</td>
+						</tr>
+
+
+					<% end %>
+				</tbody>
+
+				<tfoot>
+					<tr>
+						<td colspan="4" style="text-align: center;padding: 0px;font-size: 16px;">
+							<%= paginate @products, class: "pagenate" %>
+						</td>
+					</tr>
+
+					<% end %>
+				</tfoot>
+
+
+
+</span>
+
+
+
+
+

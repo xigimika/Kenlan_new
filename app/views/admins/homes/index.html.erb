@@ -1,15 +1,24 @@
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<p class="show_mini_top"></p>
+
 <body>
 
-<div></div>
-<div class="ad_index"><%= link_to "管理者の編集ページへ", edit_admin_registration_path, class: "ad_ad_index" %></div>
+<div>
+	<div class="ad_index"><%= link_to "管理者の編集ページへ", edit_admin_registration_path, class: "ad_ad_index" %></div>
 
-<div class="us_index"><%= link_to "User一覧へ", admins_users_path, class: "ad_us_index" %></div>
+	<div class="us_index"><%= link_to "User一覧へ", admins_users_path, class: "ad_us_index" %></div>
 
-<div class="pr_index"><%= link_to "Product一覧へ", admins_products_path, class: "ad_pr_index" %></div>
+	<div class="pr_index"><%= link_to "Product一覧へ", admins_products_path, class: "ad_pr_index" %></div>
 
-<div class="us_index"><%= link_to "E-MAIL" , admins_emails_path, class: "ad_ad_index" %></div>
+	<div class="us_index"><%= link_to "E-MAIL" , admins_emails_path, class: "ad_ad_index" %></div>
 
+	<div class="us_index"><%= link_to "趣味投稿ページへ", admins_freepages_index_path, class: "ad_free_index" %></div>
+</div>
 
-
-
+<!-- new_freepage -->
 </body>

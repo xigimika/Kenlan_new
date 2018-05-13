@@ -1,5 +1,14 @@
-<% if user_signed_in? %>
-	<h1 style="text-align: center;margin-top: 7%;">新規投稿</h1>
+<html>
+  <head>
+    <title>檢覽-KENLAN-</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+	<% if user_signed_in? %>
+	<p class="show_mini_top"></p>
+	<h1 class="pro_title">新規投稿</h1>
 
 
 	<%= form_for @product, url: products_path do |t| %>
@@ -20,25 +29,25 @@
 
 		  	<h3>カテゴリー</h3>
 
-	      	<div class="category-control">
+	      	<div class="category-control category_select" style="width: 30%;">
 	      		<%= t.select :category, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
 	      	</div>
 	      	<br>
 
 			<p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
 			<p class="p_text">＊　選択肢では、＜例："仕事探し(転職)"＞のように表示されますが、実際詳細ページなどでは"仕事探し"の部分は省略され"＜転職＞"と表示されます。</p>
-			<div class="category-control">
+			<div class="category-control category_select" style="width: 30%;">
 	      		<%= t.select :category_detail, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
 	     	 </div>
 
 	      <p class="p_text">カテゴリーを複数指定する場合のみ下記項目よりお選びください。</p>
-		  <div class="category-control">
+		  <div class="category-control category_select" style="width: 30%;">
 	      	<%= t.select :category_2, Product::CATEGORY_LIST.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
 	      </div>
 	      <br>
 
 	      <p class="p_text">上記カテゴリーに関してより詳しく分類を指定する時のみ以下を選択してください。</p>
-	      <div class="category-control">
+	      <div class="category-control category_select" style="width: 30%;">
 	      	<%= t.select :category_detail_2, Product::CATEGORY_LIST_2.to_a, {prompt: '選択してください'}, {class: "form-control"} %>
 	      </div>
 
@@ -65,14 +74,14 @@
 
 		  <h3>詳細⑴‹TOPページで表示される短文を記入›</h3>
 		  <div class="form-group">
-		  	<%= t.text_area :ad_show,:placeholder => "詳細", class: "new_field_text" %>
+		  	<%= t.text_area :ad_show,:placeholder => "詳細", class: "new_field_text_pro" %>
 		  </div>
 		  	<p class="p_text">TOPページで表示されるこの広告の説明を<b>250文字以内</b>で記入してください</p>
 		<hr>
 
 		<h3>詳細⑵‹詳細ページで表示される文章を記入›</h3>
 		  <div class="form-group">
-		  	<%= t.text_area :ad_show_text,:placeholder => "詳細",class: "new_field_text" %>
+		  	<%= t.text_area :ad_show_text,:placeholder => "詳細",class: "new_field_text_pro" %>
 		  </div>
 		 	<p class="p_text">詳細ページで表示されるこの広告の説明を<b>500文字前後</b>で記入してください</p>
 		<hr>
@@ -97,13 +106,15 @@
 
 
 	<% else %>
+	<p class="show_mini_top"></p>
 		<h1  class="pro_new_dame">何URLでココ飛んでんねん、前のページもどれや！！</h1>
 		<div class="pro_new_dame_imag"></div>
 
-<% end %>
-<br>
-<br>
-<br>
-<br>
-<br>
+	<% end %>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
+</html>

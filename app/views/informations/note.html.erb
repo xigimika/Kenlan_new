@@ -1,42 +1,51 @@
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
 <% if user_signed_in? %>
 
-<div class="info_index">
-	<h1>登録画面の説明と注意点</h1>
+<p class="show_mini_top"></p>
+<div class="info_index" style="padding: 0px 5px 10px 9px;">
+	<h2>登録画面の説明と注意点</h2>
 
-	<h3>⑴ 画像投稿</h3>
+	<h4>⑴ 画像投稿</h4>
 	<p class="note_text">画像には広告と関連のあるものを投稿してください。<br>
 	画像の指定が無いと、デフォルトで下記の画像が表示されます。</p>
 	<span class="note_no_image"><%= image_tag 'no-image.jpg' ,style:"max-width: 150px; max-height: 150px; background-size: cover;" %></span>
 
 
-	<h3>⑵ カテゴリー</h3>
+	<h4>⑵ カテゴリー</h4>
 	<p class="note_text">選択肢に該当する項目を選んでください。1つ目の選択肢は必須となっておりますので、該当項目がない場合は「その他」を選択の上、入力画面にカテゴリーを記入してください。<br>
 	選択肢に追加を希望する項目がございましたら、下記＊の"こちら"をクリックし、管理者へご連絡をお願いします。</p>
 
-	<h3>⑶ 企業名</h3>
+	<h4>⑶ 企業名</h4>
 	<p class="note_text">表示させたい企業・会社・レーベル名を記入してください。<br>
 	新規投稿の度に毎回打ち込みをお願いします。</p>
 
-	<h3>⑷ タイトル</h3>
+	<h4>⑷ タイトル</h4>
 	<p class="note_text">TOPに表示される広告のタイトルです。文字制限は特にありませんが、長すぎると若干見づらくなります。</p>
 
-	<h3>⑸ 詳細①</h3>
+	<h4>⑸ 詳細①</h4>
 	<p class="note_text">TOPページに表示される簡単な説明・詳細を記入してください。<br>
 	入力は250文字以内でお願いします。</p>
 
-	<h3>⑹ 詳細②</h3>
+	<h4>⑹ 詳細②</h4>
 	<p class="note_text">掲載した広告の詳細ページに表示されます。「詳細①」よりも詳しい説明・詳細を記入できます。<br>
 	500〜600文字前後まで記入できます。</p>
 
-	<h3>⑺ URL</h3>
+	<h4>⑺ URL</h4>
 	<p class="note_text">リンク先を記述してください。</p>
 
-	<h3>⑻ 検索キーワード</h3>
+	<h4>⑻ 検索キーワード</h4>
 	<p class="note_text">閲覧者が検索をかけた際にヒットしてほしい単語を記入してください。<br>
 	複数指定可能ですが、広告と関係のない単語は入力しないでください。</p>
 
 <br>
- <h4>＊　上記の他にご不明点などがございましたら<%= link_to "こちら", inquiries_path,  style: "color: mediumblue; font-variant:ruby;" %>よりご連絡くださいませ。</h4>
+ <h5>＊　上記の他にご不明点などがございましたら<%= link_to "こちら", inquiries_path,  style: "color: mediumblue; font-variant:ruby;" %>よりご連絡くださいませ。</h5>
 
 
 </div>
@@ -46,10 +55,10 @@
 <br>
 <br>
 <br>
-<br>
 
 <% else %>
 
+<p class="show_mini_top"></p>
 <body>
 	<div class="info-visual_ad">
 		<div class="info-visual-content_ad">

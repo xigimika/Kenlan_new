@@ -1,3 +1,11 @@
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<p class="show_mini_top"></p>
+
 <h2 style="text-align: center; margin-top: 8%;"><b>ログイン画面</b></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -79,9 +87,9 @@
 </table>
 
 
-<table class="">
-    <%= f.submit "管理者ページへ", class: "btn btn-success", style: "font-size:20px; padding: 8px 50px; margin-left: 43%;margin-top: 1%;" %>
-</table>
+<div style="text-align: center;">
+    <%= f.submit "管理者ページへ", class: "btn btn-success", style: "font-size:20px; padding: 8px 50px; margin-top: 4%;" %>
+</div>
 <% end %>
 
 

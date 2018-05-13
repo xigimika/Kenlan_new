@@ -16,6 +16,20 @@
     font-style: italic;
 }
 
+.admin_head_pc{
+	display: block;
+}
+
+.admin_head_mini{
+	display: none;
+}
+
+
+.font_text_ad{
+	display: block;
+	font-size: 20px;
+}
+
 .ad_ad_index{
 	background-color: #180614;
 	font-size: 30px;
@@ -26,7 +40,7 @@
 }
 
 .ad_index{
-	margin-top: 5%;
+	margin-top: 12%;
 	text-align: center;
 }
 
@@ -56,30 +70,6 @@
 .pr_index{
 	margin-top: 6%;
 	text-align: center;
-}
-
-
-.ad_mail_tab{
-	width: 96%;
-    text-align: center;
-    margin-left: 2%;
-    line-height: 42px;
-}
-
-.ad_mail_tr{
-	border: ridge;
-}
-
-
-.ad_mail_td{
-	border-right: groove;
-	font-size: 18px;
-/*	width: 14%;*/
-}
-
-.ad_mail_td_n{
-	width: 46px;
-	border-right: groove;
 }
 
 
@@ -126,6 +116,173 @@
 .actions_add{
 	text-align: center;
 }
+
+.admin_footre{
+	display: block;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1024px)and(min-width: 768px) {}
+
+
+
+
+@media (max-width: 767px){
+
+/* LogIn */
+	.table_a{
+		width: 84%;
+		margin-left: 8%;
+		margin-top: 5%;
+	}
+
+	.a_edit_ad_th{
+		background-color: black;
+		width: 28%;
+	    font-size: 18px;
+	    color: white;
+	    text-align: right;
+	}
+
+/* header */
+	.admin_head_pc{
+		display: none;
+	}
+
+	.admin_head_mini{
+		display: block;
+	}
+
+	.font_mini_ad{
+		font-size: 20px;
+	    font-family: cursive;
+	    font-style: italic;
+	    margin-left: 8px;
+	}
+
+    #humberger_ad {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      display: block;
+      width: 12px;
+    }
+    #humberger_ad div {
+ /*     position: absolute;*/
+    /*  border-radius: 2px;*/
+      display: inline-block;
+      box-sizing: border-box;
+    }
+
+    .humberger_top_ad{
+        height: 44%;
+	    border: 2px solid white;
+	    margin-top: 3px;
+	    margin-left: -10%;
+	    background-color: darkgreen;
+	    border-radius: 6px;
+    }
+
+    .humber_ad{
+        display: none;
+        width: 44%;
+        margin-left: 57%;
+        line-height: 28px;
+    }
+
+    .humber_tag_ad{
+        background-color: black;
+        padding: 26px 0px 6px 0px;
+        font-size: 20px;
+        text-align: center;
+        list-style: none;
+    }
+
+    .humber-list{
+    }
+
+    .openNav #humberger_ad span:nth-child(1) {
+        top: 11px;
+        -webkit-transform:rotate(-45deg);
+        -moz-transform:rotate(-45deg);
+        transform:rotate(-45deg)
+    }
+　/*2番目と3番目のspanを45度に*/
+    .openNav #humberger_ad span:nth-child(2),
+    .openNav #humberger_ad span:nth-child(3) {
+        top: 11px;
+        -webkit-transform:rotate(45deg);
+        -moz-transform:rotate(45deg);
+        transform:rotate(45deg)
+    }
+
+.admin_footre{
+	display: none;
+}
+
+
+/* home_index */
+
+	.font_text_ad{
+		display: none;
+	}
+
+	.ad_index{
+		margin-top: 5%;
+		text-align: center;
+		height: 7%;
+	}
+
+	.us_index{
+		margin-top: 5%;
+		text-align: center;
+		height: 7%;
+	}
+
+	.pr_index{
+		margin-top: 6%;
+		text-align: center;
+		height: 7%;
+	}
+
+/* admin_edit画面 */
+	.table_a{
+		width: 81%;
+		margin-left: 9%;
+		margin-top: 2%;
+	}
+
+	.a_edit_ad_th{
+		background-color: black;
+		width: 11%;
+	    font-size: 18px;
+	    color: white;
+	    text-align: right;
+	}
+
+	.a_edit_th_t{
+		background-color: #fff9f5;
+		font-size: 15px;
+		width: 35%;
+		line-height: 26px;
+	}
+
+	.a_t{
+		width: 80%;
+		margin-left: 7%;
+	}
+
+}
+
+
+
+
+
 
 
 

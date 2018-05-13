@@ -49,7 +49,7 @@
 				</td>
 				<td>
 					<%= link_to "編集画面へ",edit_product_path(t.id), class: "btn btn-success", style: "color:black;"  %>
-					<%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %>
+					<%=link_to "商品を削除する", product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger", style:"margin-top: 8px;" %>
 				</td>
 			</tr>
 
@@ -88,7 +88,7 @@
 					</td>
 					<td>
 						<%= link_to "編集画面へ",edit_product_path(id: t.id), class: "btn btn-success", style: "color:black;"  %>
-						<%=link_to "商品を削除する", admins_product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger" %>
+						<%=link_to "商品を削除する", admins_product_path(t.id), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "btn btn-danger", style:"margin-top: 8px;" %>
 					</td>
 				</tr>
 

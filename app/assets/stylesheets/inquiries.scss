@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.confi_mini{
+	margin-top: 93px;
+	text-align: center;
+}
 
 .conf_tr{
 	border: 1px solid #ddd;
@@ -22,7 +26,10 @@
 	font-size: 15px;
 }
 
-
+.page-header{
+	margin-left: 2%;
+  	margin-top: 93px;
+}
 
 /*.info-sousin_image{
 	background-image: url(0h70MgmE1OaB9wHkcyNnIXSD9DbnAJfXIXGmZ_JQVIYjEFcn8fGGR_JAhadGoOcGZVEn5iLitmMHMGLXEPExl-fV1GSHc-cFMQJCpSBT5ocnlBLipBRXkieVUbMC9VfCdPT3ojPFQZPyhbLSwa.jpg);
@@ -30,4 +37,54 @@
     max-height: 50%;
     background-size: 50% 50%;
 }*/
+
+
+
+@media screen and (max-width:1024px)and(min-width: 768px) {}
+
+
+
+
+@media (max-width: 767px){
+	.info_index_mini{
+		margin: -20px 0px 2px;
+	}
+
+	.info_table{
+		display: block;
+		width: 85%;
+	    max-width: 87%;
+	    margin-bottom: 20px;
+	}
+
+	.page-header{
+		margin-left: 2%;
+	  	margin-top: 3px;
+	}
+
+	.confi_mini{
+		margin-top: -18px;
+		text-align: center;
+	}
+
+	.conf_th{
+		width: 31%;
+		border-right: 1px solid #ddd;
+		text-align: right;
+		font-size: 17px;
+	}
+
+
+	.conf_td{
+		width: 69%;
+		font-size: 15px;
+	}
+
+	
+
+
+}
+
+
+
 

@@ -5,42 +5,72 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- <p class="show_mini_top"></p> -->
 
 <% if admin_signed_in? %>
 <header>
-	<div class="container">
-		<nav class="nav navbar-nav navbar-left">
-	        <ul class="nav navbar-nav navbar-left">
-	        	<li class="">
-	               <span class="font_a"><%= link_to "檢覽", root_path, style: "color:white;" %></span>
-	               <span class="font"><%= link_to "-KENLAN-", root_path, style: "color:white;" %></span>
-	        	</li>
-	        </ul>
-	    </nav>
+  <div class="admin_head_pc">
+  	<div class="container" style="height: 6%;">
+  		<nav class="nav navbar-nav navbar-left">
+        <ul class="nav navbar-nav navbar-left">
+        	<li class="">
+               <span class="font_a"><%= link_to "檢覽", root_path, style: "color:white;" %></span>
+               <span class="font"><%= link_to "-KENLAN-", root_path, style: "color:white;" %></span>
+        	</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 
-        <nav class="nav navbar-nav navbar-right">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="">
-            	<span class="font_text"><%= link_to "TOPページへ", admins_homes_path, style: "color:white;" %>&emsp;</span>
-            </li>
-            <li>
-            	<span class="font_text"><%= link_to "User一覧へ",admins_users_path, style: "color:white;" %>&emsp;</span>
-            </li>
-            <li>
-            	<span class="font_text"><%= link_to "Product一覧へ", admins_products_path, style: "color:white;" %>&emsp;</span>
-            </li>
-            <<li>
-                <span class="font_text"><%= link_to "Mail一覧へ",admins_emails_path ,style: "color:white;" %>&emsp;</span>
-            </li>
-            <li class="">
-            	<span class="font_text"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
-            </li>
+
+  <div class="admin_head_mini" style="height: 5%;">
+    <div class="center-block clearfix" style="padding-bottom: 0px;height: 110%;background-color: black;">
+        <div class="row" style="z-index: 1;position: relative;margin: 0px;">
+          <div class="col-xs-10" style="line-height: 54px;width: 100%;">
+            <span class="font_mini_ad"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+          </div>
+
+      <div class="col-xs-2 humberger_top_ad" style="width: 53px;height: 40px;">
+        <div id="humberger_ad" style="transform: scale( 3,1 );  line-height: 12px;">
+            <div style="color: white;">ー</div>
+            <div style="color: white;">ー</div>
+            <div style="color: white;">ー</div>
+        </div>
+      </div>
+        <nav class="humber_ad">
+          <ul class="humber_tag_ad">
+            　<li class="humber-list_ad" style="">
+                  <%= link_to "TOP", admins_homes_path, style: "color:white;" %>
+              </li>
+            　<li class="humber-list_ad" style="margin: -24px 0px;">
+                  <%= link_to "趣味TOPページ ", free_top_path, style: "color:white;" %>
+              </li>
+            　<li class="humber-list_ad">
+                  <%= link_to "User一覧",admins_users_path, style: "color:white;" %>
+              </li>
+              <li class="humber-list_ad" style="margin: 4px 0px;">
+                  <%= link_to "Product一覧", admins_products_path, style: "color:white;" %>
+              </li>
+              <li class="humber-list_ad">
+                  <%= link_to "Mail一覧",admins_emails_path ,style: "color:white;" %>
+              </li>
+              <li class="humber-list_ad" style="margin: 4px 0px;">
+                  <%= link_to "投稿一覧",admins_freepages_index_path ,style: "color:white;" %>
+              </li>
+              <li class="humber-list_ad">
+                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>
+              </li>
           </ul>
         </nav>
+    </div>
+  </div>
 
-
-	</div>
 </header>
 
 <% else %>
@@ -70,6 +100,7 @@
       <ul class="nav navbar-nav navbar-center">
         <li class="">
           <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
+          <h2 class="index_title_mini"><%=link_to "Aut disce aut discede.", top_path, style:"color: white;" %></h2>
         </li>
       </ul>
     </nav>
@@ -78,3 +109,44 @@
 <% end %>
     <%= yield %>
 
+<footer class="admin_footre">
+  <div class="sticky_f" style="height: 8%; padding-top: 1%;">
+    <div class="foot_ap">
+      <nav class="nav navbar-nav navbar-left">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="">
+            <span class="font_text_ad"><%= link_to "趣味TOPページ ", free_top_path, style: "color:white;" %></span>&emsp;
+          </li>
+          <li class="">
+            <span class="font_text_ad"><%= link_to "TOPページ", admins_homes_path, style: "color:white;" %>&emsp;</span>
+          </li>
+          <li>
+            <span class="font_text_ad"><%= link_to "User一覧",admins_users_path, style: "color:white;" %>&emsp;</span>
+          </li>
+          <li>
+            <span class="font_text_ad"><%= link_to "Product一覧", admins_products_path, style: "color:white;" %>&emsp;</span>
+          </li>
+          <li>
+              <span class="font_text_ad"><%= link_to "Mail一覧",admins_emails_path ,style: "color:white;" %>&emsp;</span>
+          </li>
+          <li>
+              <span class="font_text_ad"><%= link_to "投稿一覧",admins_freepages_index_path ,style: "color:white;" %>&emsp;</span>
+          </li>
+          <li class="">
+            <span class="font_text_ad"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+
+    $('#humberger_ad').on('click',function(){
+      $('.humber_ad').slideToggle();
+
+    });
+</script>

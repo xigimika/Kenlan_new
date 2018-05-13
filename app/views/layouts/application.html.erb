@@ -1,156 +1,366 @@
 <!DOCTYPE html>
-<html>
+<html class="">
   <head>
     <title>檢覽-KENLAN-</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<!--     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+              $("nav").naver({
+                animated: true, //メニュー表示に動きを付けるか
+                labelClosed: "メニュー", //メニューが閉じている時の見出し
+                labelOpen: "閉じる" //メニューが開いている時の見出し
+              });
+        });
+    </script> -->
+
+    <meta charset="UTF-8">
   </head>
 
-<header style="position: fixed;
-               top: 0;
-               left: 0;
-               right: 0;
-               z-index: 1;
-               background-color: black;
-               bottom: 90.5%;">
-	<div class="container">
-		<% if user_signed_in? %>
-        <!--ログイン中-->
-        <nav class="nav navbar-nav navbar-left">
-          <ul class="nav navbar-nav navbar-left">
-  			<li class="">
-               <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
-            </li>
-          </ul>
-        </nav>
-        <nav class="nav navbar-nav navbar-right">
-          <ul class="nav navbar-nav navbar-right">
-            <li class=""><span class="font_text"><%= link_to "ユーザページへ", users_path, style: "color:white;" %>&emsp;</span>
-            </li>
-            <li class="">
-            <span class="font_text"><%= link_to "ログアウト", destroy_user_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
-            </li>
-          </ul>
-        </nav>
-        <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px; width: 100%; background-color: black;margin-left: 294px;margin-top: -20px;">
-          <ul class="nav navbar-nav navbar-center">
-            <li class="">
-              <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
-            </li>
-          </ul>
-        </nav>
 
+
+  <header>
+    <div class="ap_head">
+    	<div class="container ap_head_pc">
+    		<% if user_signed_in? %>
+            <!--ログイン中-->
+            <nav class="nav navbar-nav navbar-left">
+              <ul class="nav navbar-nav navbar-left">
+      			<li class="">
+                   <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
+                <li class=""><span class="font_text"><%= link_to "ユーザページへ", users_path, style: "color:white;" %>&emsp;</span>
+                </li>
+                <li class="">
+                <span class="font_text"><%= link_to "ログアウト", destroy_user_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px;width: 40%;background-color: black;margin-left: 10%;margin-top: 3%;">
+              <ul class="nav navbar-nav navbar-center">
+                <li class="">
+                  <h2 class="index_title">
+                    <%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %>
+                  </h2>
+                  <h2 class="index_title_tp">
+                    <%=link_to "citius, altius, fortius.", top_path, style:"color: white;" %>
+                  </h2>
+                </li>
+              </ul>
+            </nav>
+
+      
+          <% elsif admin_signed_in? %>
+            <!--adminログイン中-->
+            <nav class="nav navbar-nav navbar-left">
+              <ul class="nav navbar-nav navbar-left">
+            <li class="">
+                   <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
+                <li class=""><span class="font_text"><%= link_to "管理者ページへ", admins_homes_path, style: "color:white;" %>&emsp;</span>
+                </li>
+                <li class="">
+                <span class="font_text"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px;width: 40%;background-color: black;margin-left: 10%;margin-top: 3%;">
+              <ul class="nav navbar-nav navbar-center">
+                <li class="">
+                  <h2 class="index_title">
+                    <%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %>
+                  </h2>
+                  <h2 class="index_title_tp">
+                    <%=link_to "citius, altius, fortius.", top_path, style:"color: white;" %>
+                  </h2>
+                </li>
+              </ul>
+            </nav>
+
+      
+            <% else %>
+            <!-- ログアウト中 -->
+            <nav class="nav navbar-nav navbar-left">
+              <ul class="nav navbar-nav navbar-left">
+      			<li class="">
+                   <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <span class="font_text"><%= link_to "本サイト概要", informations_path, style: "color:white; margin:0px;" %>&emsp;</span>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px;width: 40%;background-color: black;margin-left: 10%;margin-top: 3%;">
+              <ul class="nav navbar-nav navbar-center">
+                <li class="">
+                  <h2 class="index_title">
+                    <%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %>
+                  </h2>
+                  <h2 class="index_title_tp">
+                    <%=link_to "citius, altius, fortius.", top_path, style:"color: white;" %>
+                  </h2>
+                </li>
+              </ul>
+            </nav>
+
+            <% end %>
+    	</div>
+    </div>
+
+                                                
+  <!-- iPhone サイズ -->
+
+    <div class="container ap_head_mini">
+      <% if user_signed_in? %>
+        <!--userログイン中-->
+
+        <div class="center-block clearfix" style="padding-bottom: 0px;height: 100%;">
+          <div class="row" style="height: 100%;">
+            <div class="col-xs-4" style="line-height: 44px;">
+              <span class="font_mini"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+            </div>
+            <div class="col-xs-4">
+              <h5 class="index_title_mini"><%=link_to "Aut disce aut discede.", top_path, style:"color: white;" %></h5>
+            </div>
+
+            <div class="col-xs-4 humberger_top">
+              <div id="humberger" style="transform: scale( 3,1 );  line-height: 10px;">
+                <div style="color: white;">ー</div>
+                <div style="color: white;">ー</div>
+                <div style="color: white;">ー</div>
+              </div>
+            </div>
+            <nav class="humber">
+              <ul class="humber_tag">
+                　<li class="humber-list" style="padding-top: 15px;">
+                      <a href="/" style="color: white;">Home</a>
+                  </li>
+                　<li class="humber-list">
+                      <a href="/users" style="color: white;">ユーザーページ</a>
+                  </li>
+                　<li class="humber-list">
+                      <a href="/informations/note" style="color: white;">新規投稿の際の注意事項など</a>
+                  </li>
+                　<li class="humber-list">
+                      <a href="/inquiries" style="color: white;">お問い合わせ</a>
+                  </li>
+                　<li class="humber-list">
+                      <%= link_to "ログアウト", destroy_user_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style:"color: white;" %>
+                  </li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+
+
+
+       
       <% elsif admin_signed_in? %>
         <!--adminログイン中-->
-        <nav class="nav navbar-nav navbar-left">
-          <ul class="nav navbar-nav navbar-left">
-        <li class="">
-               <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
-            </li>
-          </ul>
-        </nav>
-        <nav class="nav navbar-nav navbar-right">
-          <ul class="nav navbar-nav navbar-right">
-            <li class=""><span class="font_text"><%= link_to "管理者ページへ", admins_homes_path, style: "color:white;" %>&emsp;</span>
-            </li>
-            <li class="">
-            <span class="font_text"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style: "color:white;" %>&emsp;</span>
-            </li>
-          </ul>
-        </nav>
-        <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px; width: 100%; background-color: black;margin-left: 294px;margin-top: -20px;">
-          <ul class="nav navbar-nav navbar-center">
-            <li class="">
-              <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
-            </li>
-          </ul>
-        </nav>
+        <div class="center-block clearfix" style="padding-bottom: 0px;height: 100%;">
+          <div class="row" style="height: 100%;">
+            <div class="col-xs-4" style="line-height: 44px;">
+              <span class="font_mini"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+            </div>
+            <div class="col-xs-4">
+              <h5 class="index_title_mini"><%=link_to "Aut disce aut discede.", top_path, style:"color: white;" %></h5>
+            </div>
 
-  
-        <% else %>
+            <div class="col-xs-4 humberger_top">
+              <div id="humberger" style="transform: scale( 3,1 );  line-height: 10px;">
+                <div style="color: white;">ー</div>
+                <div style="color: white;">ー</div>
+                <div style="color: white;">ー</div>
+              </div>
+            </div>
+            <nav class="humber">
+              <ul class="humber_tag">
+                　<li class="humber-list" style="padding-top: 15px;">
+                      <a href="/" style="color: white;">Home</a>
+                  </li>
+                　<li class="humber-list">
+                      <%= link_to "管理者ページへ", admins_homes_path, style: "color:white;" %>
+                  </li>
+                　<li class="humber-list">
+                      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete , data: {confirm: "ログアウトしますか？"}, style:"color: white;" %>
+                  </li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+
+
+       
+      <% else %>
         <!-- ログアウト中 -->
-        <nav class="nav navbar-nav navbar-left">
-          <ul class="nav navbar-nav navbar-left">
-  			<li class="">
-               <span class="font"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
-            </li>
-          </ul>
-        </nav>
-        <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="">
-              <span class="font_text"><%= link_to "本サイト概要", informations_path, style: "color:white; margin:0px;" %>&emsp;</span>
-            </li>
-          </ul>
-        </nav>
-        <nav class="nav navbar-nav navbar-center" style="margin-bottom: 4px; width: 100%; background-color: black;margin-left: 294px;margin-top: -20px;">
-          <ul class="nav navbar-nav navbar-center">
-            <li class="">
-              <h2 class="index_title"><%=link_to "Petite et accipietis, pulsate et aperietur vobis.", top_path, style:"color: white;" %> </h2>
-            </li>
-          </ul>
-        </nav>
+                <div class="center-block clearfix" style="padding-bottom: 0px;height: 100%;">
+          <div class="row" style="height: 100%;">
+            <div class="col-xs-4" style="line-height: 44px;">
+              <span class="font_mini"><%= link_to "檢覽-KENLAN-", root_path, style: "color:white;" %></span>
+            </div>
+            <div class="col-xs-4">
+              <h5 class="index_title_mini"><%=link_to "Aut disce aut discede.", top_path, style:"color: white;" %></h5>
+            </div>
 
-        <% end %>
-	</div>
-</header>
+            <div class="col-xs-4 humberger_top">
+              <div id="humberger" style="transform: scale( 3,1 );  line-height: 10px;">
+                <div style="color: white;">ー</div>
+                <div style="color: white;">ー</div>
+                <div style="color: white;">ー</div>
+              </div>
+            </div>
+            <nav class="humber">
+              <ul class="humber_tag">
+                　<li class="humber-list" style="padding-top: 15px;">
+                      <a href="/" style="color: white;">Home</a>
+                  </li>
+                　<li class="humber-list">
+                      <%= link_to "お問い合わせ／登録をご希望の方はこちら", inquiries_path, style:"color: white;" %>
+                  </li>
+                　<li class="humber-list">
+                      <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;font-size:20px;" %>
+                  </li>
+              </ul>
+            </nav>
 
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+  </header>
+
+                                            
 
     <%= yield %>
 
 
   <footer>
     <div class="sticky_f">
-      <% if user_signed_in? %>
-        <!--ログイン中-->
-        <nav class="nav navbar-nav navbar-left">
-          <div class="">&emsp;<%= link_to "運営への質問／問い合わせはこちら", inquiries_path, style:"color: white;font-size:20px;" %></div>
-        </nav>
-        <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
-          <div class=""> <%= link_to "投稿に関して", informations_note_path, style:"color: white;font-size:20px;" %>&emsp;</div>
-         </nav>
-  <br/>
-        <p style="margin-right: 21.8%;">
-            <a style="color: white;">利用規約　|</a>
-            <a style="color: white;">プライバシーポリシー　|</a>
-            <a style="color: white;">サイトマップ</a>
-        </p>
-        <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserved.</small></p>
+      <div class="foot_ap">
+        <% if user_signed_in? %>
+          <!--ログイン中-->
+          <nav class="nav navbar-nav navbar-left">
+            <div class="">&emsp;<%= link_to "運営への質問／問い合わせはこちら", inquiries_path, style:"color: white;font-size:20px;" %></div>
+          </nav>
+          <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+            <div class=""> <%= link_to "投稿に関して", informations_note_path, style:"color: white;font-size:20px;" %>&emsp;</div>
+           </nav>
+    <br/>
+          <p style="padding-top: 1%;">
+              <a><%= link_to "利用規約　|",informations_path,style:"color: white;" %></a>
+              <a><%= link_to "プライバシーポリシー　|",informations_path,style:"color: white;" %></a>
+              <a><%= link_to "サイトマップ",informations_path,style:"color: white;" %></a>
+          </p>
+          <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserved.</small></p>
 
 
-      <% elsif admin_signed_in? %>
-      <!-- adminログイン中 -->
-        <p>
-            <a style="color: white;">利用規約　|</a>
-            <a style="color: white;">プライバシーポリシー　|</a>
-            <a style="color: white;">サイトマップ</a>
-        </p>
-        <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserved.</small></p>
+        <% elsif admin_signed_in? %>
+        <!-- adminログイン中 -->
+          <p style="padding-top: 10px;">
+              <a><%= link_to "利用規約　|",informations_path,style:"color: white;" %></a>
+              <a><%= link_to "プライバシーポリシー　|",informations_path,style:"color: white;" %></a>
+              <a><%= link_to "サイトマップ",informations_path,style:"color: white;" %></a>
+          </p>
+          <p style="color: white;padding-bottom:3px;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserved.</small></p>
 
 
-      <% else %>
-        <!-- ログアウト中 -->
+        <% else %>
+          <!-- ログアウト中 -->
 
-  	    <nav class="nav navbar-nav navbar-left">
-          <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", inquiries_path, style:"color: white;font-size:20px;" %></div>
-        </nav>
-  	    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
-          <div class=""> <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;font-size:20px;" %> </div>
-         </nav>
-  <br/>
-  	  	<p style="margin-right: 26.5%;">
-  	        <a style="color: white;">利用規約　|</a>
-  	        <a style="color: white;">プライバシーポリシー　|</a>
-  	        <a style="color: white;">サイトマップ</a>
-  	    </p>
-  	    <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_registration_path, style:"color:white; font-size: 85%;" %></p>
+    	    <nav class="nav navbar-nav navbar-left">
+            <div class=""> <%= link_to "お問い合わせ／登録をご希望の方はこちら", inquiries_path, style:"color: white;font-size:20px;" %></div>
+          </nav>
+    	    <nav class="nav navbar-nav navbar-right" style="margin: 0px;">
+            <div class=""> <%= link_to "〓　企業の方はこちらよりログイン", new_user_session_path, style:"color: white;font-size:20px;" %> </div>
+           </nav>
+    <br/>
+    	  	<p style="padding-top: 1%;">
+    	        <a><%= link_to "利用規約　|",informations_path,style:"color: white;" %></a>
+              <a><%= link_to "プライバシーポリシー　|",informations_path,style:"color: white;" %></a>
+              <a><%= link_to "サイトマップ",informations_path,style:"color: white;" %></a>
+    	    </p>
+    	    <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_registration_path, style:"color:white; font-size: 85%;" %></p>
 
-      <% end %>
+        <% end %>
+      </div>
+                                              
+
+      <div class="ap_foot">
+        <% if user_signed_in? %>
+          <!--ログイン中-->
+          <p>
+              <a><%= link_to "利用規約　| プライバシーポリシー　| サイトマップ", informations_path, style: "color:white;" %></a>
+          </p>
+          <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_registration_path, style:"color:white; font-size: 85%;" %></p>
+
+
+
+
+        <% elsif admin_signed_in? %>
+          <!-- adminログイン中 -->
+          <p>
+              <a><%= link_to "利用規約　| プライバシーポリシー　| サイトマップ", informations_path, style: "color:white;" %></a>
+          </p>
+          <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_registration_path, style:"color:white; font-size: 85%;" %></p>
+
+
+
+
+        <% else %>
+          <!-- ログアウト中 -->
+          <p>
+              <a>
+                <%= link_to "利用規約　|", informations_path, style: "color:white;" %>
+              </a>
+              <a style="color: white;">
+                <%= link_to "プライバシーポリシー　|", informations_path, style: "color:white;" %>
+              </a>
+              <a style="color: white;">
+                <%= link_to "サイトマップ", informations_path, style: "color:white;" %>
+              </a>
+          </p>
+          <p style="color: white;"><small>Copyrighht © 2018 ABCD Co.,Ltd. All Rights Reserv</small><%= link_to "ed.", new_admin_registration_path, style:"color:white; font-size: 85%;" %></p>
+
+
+
+
+        <% end %>
+
+      </div>
+
+      </div>
 
     </div>
   </footer>
 
+      <script>
 
+        $('#humberger').on('click',function(){
+          $('.humber').slideToggle();
+
+        });
+    </script>
 </html>

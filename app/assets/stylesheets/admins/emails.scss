@@ -3,12 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.ad_mail_tab{
+  display: block;
+  width: 96%;
+  text-align: center;
+  margin-left: 2%;
+  line-height: 42px;
+}
+
+.ad_mail_tab_mini{
+  display: none;
+}
+
+.ad_mail_tr{
+  border: ridge;
+}
+
+
+.ad_mail_td{
+  border-right: groove;
+  font-size: 18px;
+/*  width: 14%;*/
+}
+
+.ad_mail_td_n{
+  width: 46px;
+  border-right: groove;
+}
+
 
 .email_th{
 	width: 22%;
-    text-align: right;
-    border-bottom: 1px solid #ddd;
-    line-height: 34px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+  line-height: 34px;
 }
 
 
@@ -36,3 +64,52 @@ table > tbody > tr {
 table > tbody > tr > td:first-child::before {
   content: counter(rowCount);
 }
+
+.email_table{
+  width: 65%;
+  margin-left: 15%;
+}
+
+
+
+
+
+@media screen and (max-width:1024px)and(min-width: 768px) {}
+
+
+
+
+@media (max-width: 767px){
+  .ad_mail_tab{
+    display: none;
+  }
+
+  .ad_mail_tab_mini{
+    display: block;
+    width: 96%;
+    text-align: center;
+    margin-left: 2%;
+    line-height: 42px;
+  }
+
+  .email_table{
+    width: 85%;
+    margin-left: 7%;
+  }
+
+  .email_th{
+      width: 34%;
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+

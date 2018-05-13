@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 before_action :authenticate_user!
+layout 'application'
 
   def index
     # @products = Product.where(user_id: current_user.id)

@@ -1,0 +1,180 @@
+// Place all the styles related to the admins/freepages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.fre_top{
+    text-align: -webkit-right;
+    margin-right:  8%;
+    margin-top: 3%;
+}
+
+.ad_free_index{
+	background-color: greenyellow;
+    font-size: 30px;
+    color: darkred;
+    padding: 18px 36px;
+    border-radius: 22px;
+    box-shadow: 0px 12px 24px;
+}
+
+/*.form-control_ad{
+	display: block;
+    height: 34px;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+	width: 26%;
+	margin-left: 37%;
+}
+*/
+.free_new{
+    font-size: 30px;
+    border: 2px solid yellowgreen;
+    background-color: lightgoldenrodyellow;
+    width: 13%;
+    text-align: center;
+    line-height: 46px;
+}
+
+.fr_hr{
+    display: none;
+}
+
+.free_show_1{
+	background-color: snow;
+    height: 100%;
+}
+
+.free_show_2{
+	width: 70%;
+    margin-left: 16%;
+    background-color: white;
+    height: 100%;
+    padding-top: 1px;
+    padding-bottom: 2%;
+}
+
+.free_link{
+	width: 70%;
+    margin-left: 16%;
+    background-color: white;
+    padding-top: 6px;
+    font-size: 16px;
+}
+
+.free_link_te{
+	transform: scale(1, 1.5);
+    line-height: 2em;
+    display: inline-block;
+    color: black;
+}
+
+.free_click{
+    width: 23%;
+}
+
+.pc_block_1{
+    display: block;
+    width: 3%;
+}
+
+.pc_block_2{
+    display: block;
+    width: 3%;
+    padding: 15px 0px 0px 0px;
+    font-size: 17px;
+}
+
+.free_tag_1{
+    width: 38%;
+}
+
+.free_tag_2{
+    width:16%;
+}
+
+.free_tag_3{
+    width:17%;
+}
+
+.free_click{
+    display: block;
+    width: 100%;
+}
+
+.free_click_mini{
+    display: none;
+}
+
+
+@media screen and (max-width:1024px)and(min-width: 768px) {}
+
+
+
+
+@media (max-width: 767px){
+    .fre_top{
+        text-align: -webkit-left;
+        margin-right: 0%;
+        margin-top: 3%;
+        margin-left: 5%;
+    }
+
+    .free_new {
+        font-size: 25px;
+        border: 2px solid yellowgreen;
+        background-color: lightgoldenrodyellow;
+        width: 26%;
+        text-align: center;
+        line-height: 38px;
+    }
+
+    .fr_hr{
+        display: block;
+    }
+
+    .pc_block_1{
+        display: none;
+    }
+
+    .pc_block_2{
+        display: none;
+    }
+
+    .free_tag_1{
+        width: 50%;
+    }
+
+    .free_tag_2{
+        width: 25%;
+    }
+
+    .free_tag_3{
+        width: 25%;
+    }
+
+    .free_click{
+        display: none;
+    }
+
+    .free_click_mini{
+        display: block;
+        width: 193%;
+        text-align: center;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+

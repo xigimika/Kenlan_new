@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325110925) do
+ActiveRecord::Schema.define(version: 20180402095006) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +39,34 @@ ActiveRecord::Schema.define(version: 20180325110925) do
     t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "freepages", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.text "text"
+    t.string "image_free_id"
+    t.string "midashi_1"
+    t.string "midashi_2"
+    t.string "midashi_3"
+    t.string "midashi_4"
+    t.string "midashi_5"
+    t.string "midashi_6"
+    t.text "stext_1"
+    t.text "stext_2"
+    t.text "stext_3"
+    t.text "stext_4"
+    t.text "stext_5"
+    t.text "stext_6"
+    t.string "image_f2_1_id"
+    t.string "image_f2_2_id"
+    t.string "image_f2_3_id"
+    t.string "image_f2_4_id"
+    t.string "image_f2_5_id"
+    t.string "image_f2_6_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "admin_id"
   end
 
   create_table "inquiries", force: :cascade do |t|

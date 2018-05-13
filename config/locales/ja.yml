@@ -26,4 +26,11 @@ ja:
         zayu: 座右铭
         id_kari: ID
 
-
+  activerecord:
+    models:
+      freepage: 投稿
+    attributes:
+      freepage:
+        title: タイトル
+        genre: ジャンル
+        text: テキスト
