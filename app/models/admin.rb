@@ -5,11 +5,11 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   with_options presence: true do
-	validates :pic_name
-	validates :aihao
-	validates :aichi
-	validates :zayu
-	validates :id_kari
+	# validates :pic_name
+	# validates :aihao
+	# validates :aichi
+	# validates :zayu
+	# validates :id_kari
   end
 
 has_many :freepages
