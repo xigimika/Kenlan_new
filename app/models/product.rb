@@ -16,8 +16,8 @@ belongs_to :user
 
 
 
-validates_presence_of :category, :company_name, :ad_name,
- 					:ad_show, :ad_show_text, :url, :key_word
+# validates_presence_of :category, :company_name, :ad_name,
+#  					:ad_show, :ad_show_text, :url, :key_word
 
 
 
