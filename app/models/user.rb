@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	validates :zip, numericality: { only_integer: true }
-	validates :tell, numericality: { only_integer: true }
+	# validates :zip, numericality: { only_integer: true }
+	# validates :tell, numericality: { only_integer: true }
 
  has_many :products
 
